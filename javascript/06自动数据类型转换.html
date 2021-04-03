@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+    /*
+        查看js语法错误
+            1.火狐    fireBug
+            2.谷歌    chome控制台
+        
+        
+        
+        1.任何类型的数据和字符串型的数据做相加操作的时候。其他数据类型会自动转换成为字符串类型。字符串拼接。此时相加操作不再是数学意义上加法，而是表示拼接的意思。
+            如果其中一个操作树是字符串的时候 ，+号叫做字符串拼接符
+        2.任何数据除了和字符串做相加运算外，先要将字符串转换成数字再进行运算。
+            《1》与NaN做算数运算的结果始终都是NaN,包括NaN本身和NaN做运算结果也为NaN 
+            《2》字符串如果是纯数字字符串转成数字，否则转换成NaN
+    */
+   // var tmp = "你" + "好";
+   // var tmp = "1" + 1;
+   // var tmp = "1" + true;
+    //var tmp = "h" + undefined; 
+    //alert(tmp);   //tmp is not defined  tmp变量没有声明
+    
+    
+    
+    
+    //var tmp = 1 - "2";  //-1 字符串"2" 转成数字2
+    //var tmp = 1 - "2a";  //NaN   意思是not a number    "2a"转成NaN
+   // var tmp = NaN - NaN;
+    
+    
+    //var tmp = 1 * "1";  //1
+    
+    /*
+        总结：任何其他数据类型除了和字符串做相加操作外，与数字类型做算数的时候，其他数据类型都会自动的转换成数字。
+        
+        布尔值：
+        true => 1
+        false => 0
+        
+        特殊数据类型中：
+        null => 0
+        undefined => NaN
+    */
+    
+    //var tmp = 1 / "1"; //1 number
+    
+    //var tmp = 1 + true;  // 2
+    //var tmp = 1 + false;   // 1
+    var tmp = 1 + undefined;
+   alert(tmp);
+    </script>
+<body>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            chilNodes   获取当前元素节点的所有的子节点，包括两种节点类型
+            1.元素节点
+            2.文本节点
+        */
+       
+    
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            //[object NodeList]  装有当前元素节点所有的子节点
+            //alert(oDiv.childNodes.length);
+            
+            /*
+                dom节点类型
+                元素节点    文本节点    属性节点
+                
+                【注】节点可以分为元素节点、属性节点、文本节点,而这些节点又有三非常有用的属性，分别为：nodename、nodeType、nodeValue
+            */
+           // alert(oDiv.childNodes[0].nodeName);  //em
+           // alert(oDiv.childNodes[0].nodeType);  //1
+           // alert(oDiv.childNodes[0].nodeValue);  //null
+            
+            
+           //  alert(oDiv.childNodes[1].nodeName);  //text
+          //  alert(oDiv.childNodes[1].nodeType);  //3
+          // alert(oDiv.childNodes[1].nodeValue);  //文本内容
+            
+            
+            
+            /*
+                firstChild    快速找到当前元素节点子节点的第一个
+                lastChild       快速找到当前元素节点子节点的最后一个
+            */
+            
+            
+           // alert(oDiv.firstChild.nodeName);
+           // alert(oDiv.lastChild.nodeName);
+            
+            
+            
+            
+            
+            /*
+            如何将空白节点取出
+            【注】识别出空白节点
+            
+            /^\s+$/.test()  使用左侧的正则去进行验证，如果是空白节点，返回true,否则返回false   
+            
+            */
+            
+           // alert(oDiv.childNodes.length);
+           // var nodes = removSpaceNode(oDiv.childNodes);
+           // alert(nodes.length);
+            
+            
+            
+            
+            /*
+                使用firstchild   lastchild
+                必须从父节点上删除空白节点
+            
+            */
+            
+            //【注】删除数组，必须倒数删除
+            
+            removeSpaceNode2(oDiv);
+            alert(oDiv.childNodes[0].nodeName);
+            alert(oDiv.childNodes.length);
+            alert(oDiv.firstChild.nodeName);
+        }
+        
+        //从父节点上删除空白节点
+        function removeSpaceNode2(parent){
+            var nodes = parent.childNodes;
+            for(var i = nodes.length - 1; i >= 0; i--){
+               if(nodes[i].nodeType == 3 &&  /^\s+$/.test(nodes[i].nodeValue)) {
+                   //删除该空白节点
+                   parent.removeChild(nodes[i]);
+               }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        //删除空白节点
+        function removSpaceNode(nodes){
+            var result = [];  //用来存放不是空白节点的节点
+            for(var i = 0; i < nodes.length; i++){
+                //判断是否是空白节点
+                if(nodes[i].nodeType == 3 &&  /^\s+$/.test(nodes[i].nodeValue)){
+                    continue;
+                }
+                result.push(nodes[i]);
+            }
+            return result;
+        }
+         
+    </script>
+</head>
+
+<body>
+    <div id = "div1" >
+        <em>斜体</em>
+        文本内容
+        <strong>粗体</strong> </div>
+</body>
+</html>

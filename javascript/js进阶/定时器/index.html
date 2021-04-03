@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="func1()">结束</button>
+<button onclick="func2()">重新开始</button>
+<!--间歇性定时器-->
+<script type="text/javascript">
+    var time;
+    time = window.setInterval(function (){
+        //定时器
+        console.log("大头宝贝");
+    }, 2000);
+
+
+    function  func1(){
+    //    清除定时器
+        window.clearInterval(time);
+    }
+
+    function func2(){
+        time = window.setInterval(function (){
+            //定时器
+            console.log("大头宝贝");
+        }, 2000);
+    }
+</script>
+
+
+
+<!--延时定时器-->
+<script type="text/javascript">
+    //执行一次
+    var time = setTimeout(function (){
+        console.log("大头宝贝")
+    },3000)
+</script>
+</body>
+</html>

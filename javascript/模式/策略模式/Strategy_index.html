@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script src="Strategy.js"></script>
+    <script>
+         //案例：王者荣耀--如何获胜
+        function Go2Victory(stra){
+            this.strategy = stra;
+        }
+        Go2Victory.prototype.victory = function(){
+            this.strategy.tactics();
+        }
+        
+        var v = new Go2Victory(new StrategyB());
+        v.victory();
+    </script>
+</body>
+</html>

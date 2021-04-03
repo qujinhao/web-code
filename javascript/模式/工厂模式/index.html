@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    
+    <script src="normal.js"></script>
+    <script src="GunCarrier.js"></script>
+    <script src="Strong.js"></script>
+    <script src="factory.js"></script>
+    <script>
+        
+        //案例：王者荣耀--小兵
+        var s1 = Factory.create('normal');
+        for (var i = 0; i < 100; i++){
+            Factory.create('gunCarrier');
+        }
+    </script>
+</body>
+</html>

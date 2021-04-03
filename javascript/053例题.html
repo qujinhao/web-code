@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            1.显示当前的时间
+        */
+   /*     function showDate(){
+            var d = new Date();  // 获取当前时间
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var date = d.getDate();
+            
+            var week = d.getDay();  // 星期0代表周日
+            if (week == 0){
+                week = "日";
+            }
+            
+            var hour = d.getHours();
+            var min = d.getMinutes();
+            var sec = d.getSeconds();
+            
+            return year + "年" + month + "月" + date + "日 星期" + week + " " + hour + ":" + min + ":" + sec;
+        }
+        alert(showDate());
+        */
+        
+        
+        
+        
+        
+        //setDate()和getDate(),封装一个函数，可以根据输入的数值n(天数)显示n天后的时间
+        
+        function numOfDate(n){ // n天后
+            var d = new Date();  //获取当前时刻
+            var date = d.getDate();  //取出时刻
+            d.setDate(date + n);  //加上n天
+            return d;
+        }
+        alert(numOfDate(2));
+    </script>
+</head>
+
+<body>
+</body>
+</html>

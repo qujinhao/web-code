@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>使用 XMLHttpRequest 来获取文件内容</h2>
+<p>文件内容是标准的 JSON 格式，可以使用 JSON.parse 方法将其转换为 JavaScript 对象。</p>
+
+<p id="demo"></p>
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let myObj = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myObj.name;
+        }
+    };
+    // xmlhttp.open("GET", "test.txt", true);
+    xmlhttp.open("GET", "demo.json", true);
+    xmlhttp.send();
+
+</script>
+
+<p>查看 JSON 文件数据 <a href="demo.json" target="_blank">json_demo.txt</a></p>
+
+</body>
+</html>

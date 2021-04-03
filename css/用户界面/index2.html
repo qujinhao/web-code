@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+box-sizing 属性允许您以确切的方式定义适应某个区域的具体内容
+-->
+<style>
+    div.container
+    {
+        width:30em;
+        border:1em solid;
+    }
+    div.box
+    {
+        box-sizing:border-box;
+        -moz-box-sizing:border-box; /* Firefox */
+        width:30%;
+        border:1em solid red;
+        float:left;
+    }
+</style>
+<body>
+<div class="container">
+    <div class="box">这个 div 占据了左边的一半。</div>
+    <div class="box">这个 div 占据了右边的一半。</div>
+</div>
+</body>
+</html>

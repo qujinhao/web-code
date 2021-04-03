@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background: #f00;
+        position: absolute;
+        left:30px;
+        top: 30px;
+        z-index: 1;
+    }
+    .box2{
+        width: 200px;
+        height: 200px;
+        background: #0f0;
+        position: relative;
+        left:50px;
+        top: 50px;
+        z-index: -1;
+    }
+    .box3{
+        width: 300px;
+        height: 300px;
+        background: #00f;
+
+    }
+
+/*
+z-index：类似坐标轴中的z轴，即改变图形层次结构
+*/
+</style>
+<body>
+<div class="box"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+</body>
+</html>

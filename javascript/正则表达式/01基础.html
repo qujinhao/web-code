@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type = "text/javascript">
+        //1.字面量的方式
+        var reg = /abc/;
+        
+        //2.构造函数
+        var reg = new RegExp("abc");
+        
+        
+        //test方法  正则表达式方法   用于检查字符串中是否含有符合规则的子串，有则返回true,否则返回false
+        var str = "abc";
+        var flag = reg.test(str);
+        console.log(flag);
+        
+        
+        //修饰符   g   i
+        //g  表示全局匹配
+        var reg = /abc/g;
+        var str = "abcabc";
+        
+        //match方法，字符串方法
+        console.log(str.match(reg));
+        
+        
+        
+        
+        
+        //i     忽略大小写
+        var str = "AbcABCabc";
+        var reg = /abc/gi;
+        console.log(str.match(reg));
+        
+        
+        
+        
+        
+        //search方法   用于查找符合规则的子串的位置，只返回第一个匹配的位置
+        var reg = /abc/;
+        var str = "12345abc";
+        console.log(str.search(reg));
+        
+        
+        //split
+        var reg = /good/;
+        var str = "good good study";
+        console.log(str.split(reg));
+        
+        
+        //replace
+        var reg = /tmd/i;
+        var str = "abc tmd abc TMD";
+        console.log(str.replace(reg, "*"));
+        
+        
+        
+        //exec方法    正则表达式方法 将成功匹配的内容放到数组里，如果没有匹配成功，则返回null
+        var reg = /good/g;
+        var str = "good good study";
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+        console.log(reg.exec(str));
+        
+    </script>
+</body>
+</html>

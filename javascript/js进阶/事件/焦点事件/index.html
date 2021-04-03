@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" name="" id="in" value=""/>
+    <script type="text/javascript">
+        var inp = document.getElementById("in");
+        //聚焦事件
+        inp.addEventListener("focus",function (){
+            console.log("聚焦事件");
+        },false)
+
+
+        inp.addEventListener("blur",function (){
+            console.log("离焦事件");
+        },false)
+    </script>
+</body>
+</html>

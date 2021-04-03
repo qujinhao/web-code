@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>固定列数的瀑布流</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    li{
+        list-style: none;
+    }
+
+    #box{
+        margin: 0 auto;
+        width: 700px;
+    }
+    ul{
+        width: 200px;
+        margin: 0 auto;
+        float: left;
+        margin-right: 10px;
+
+    }
+    img{
+        width: 200px;
+        padding-top:10px;
+
+    }
+
+
+
+</style>
+<body>
+<div id="box">
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+
+
+<script  type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+    window.onload =function (){
+    //    获取页面元素
+    //     var oBox = document.getElementById("box");
+        var oUl = document.getElementsByTagName("ul");
+        var vH = document.documentElement.clientHeight;
+
+    //    最小高度的列
+        function min_height(oUl){
+            var ht = oUl[0].offsetHeight;
+            var index = 0;
+            for(var i = 0; i < oUl.length; i++){
+                if(oUl[i].offsetHeight < ht){
+                    ht = oUl.offsetHeight;
+                    index = i;
+                }
+            }
+            return index;
+        }
+        loadImg();
+    //    加载图片
+        function loadImg(){
+            ajax("package.json",function (data1){
+                data1 = (new Function("return" + data1))();
+                data = data1.img;
+               for(var i = 0; i < data.length; i++){
+                   var oLi = document.createElement("li");
+                   var oImg = document.createElement("img");
+                   oImg.src = data[i];
+                   oLi.appendChild(oImg);
+                   oUl[min_height(oUl)].appendChild(oLi);
+               }
+            })
+        }
+        document.onscroll =function (){
+            var sH = document.documentElement.scrollTop || document.body.scrollTop;
+            if(sH + vH >= document.body.scrollHeight * 0.8){
+                loadImg();
+            }
+        }
+
+    }
+</script>
+</body>
+</html>

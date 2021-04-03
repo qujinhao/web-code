@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>  
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        
+        //事件处理
+     /*   $('li').on('mouseover', function(){
+            $(this).css('background', 'red');
+        }).on('mouseout', function(){
+            $(this).css('background', 'green');
+        })
+        
+        $('li:eq(3)').off('mouseover'); //解除事件绑定
+        
+        
+        $('<li>newLi</li>').appendTo('ul');
+        */
+        
+        //事件代理
+        //  :event选择器选取每个带有偶数index值的元素（2、4、6）
+        $('ul').on('mouseover', 'li:even', function(){
+            $(this).css('background', 'red');
+        }).on('mouseout', 'li:even', function(){
+            $(this).css('background', 'green');
+        })
+        $('<li>newLi</li>').appendTo('ul');
+    </script>
+</body>
+</html>

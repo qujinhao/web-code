@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript" src="tool.js"></script>
+</head>
+
+<body>
+    用户名：<input type="text">
+    密码：<input type="password">
+    <label ><input type="checkbox">七天免登录</label>
+    <input type="button" value="登录">
+    
+    
+    
+    <script type="text/javascript">
+        var aInput = document.getElementsByTagName("input");
+        
+        if(getCookie("username")){
+            aInput[0].value = getCookie("username");
+            aInput[1].value = getCookie("password");
+        }
+        aInput[3].onclick = function(){
+            var username = aInput[0].value;
+            var password = aInput[1].value;
+            if(aInput[2].checked){
+                setCookie("username", username, 7);
+                setCookie("password", password, 7);
+            }
+        }
+    </script>
+</body>
+</html>

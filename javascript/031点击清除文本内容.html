@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        
+        //oTxt.value    是字符串
+        window.onload = function (){
+            var oBtn = document.getElementById("btn");
+            var oTxt = document.getElementById("txt");
+            
+            //给按钮添加事件驱动函数
+            oBtn.onclick = function(){
+                //将文本内容清空
+                //oTxt.value = "";
+                
+                //修改文本内容
+                alert(oTxt.value);
+                //修改后文本内容
+                oTxt.value = "修改后的内容";
+                
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type = "text" value = "默认文字" id = "txt"/>
+    <input type = "button" value = "清空" id = "btn"/>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            ?id= 5&search=ok
+            
+            获取url中的search，通过传入对应key,返回key对应的value
+            
+            例子：传入id,返回5
+        */
+        
+    function getValue (search, key){
+        //<1>找出key第一次出现的位置
+        var start = search.indexOf(key);
+        if(start == -1){
+            return;
+        }else{
+            //<2>找出键值对，结束的位置
+            var end = search.indexOf("&", start);
+            if(end == -1){
+                //这是最后一个键值对
+                end = search.length;
+            }
+        }
+        //<3>将键值对提取出来
+        var str = search.substring(start, end);
+        //key=value 获取value
+        var arr = str.split("=");
+        alert(arr);
+        return arr[1];
+    }
+        var search = "?id= 5&search=ok";
+       alert(getValue(search, "id"));
+    </script>
+</head>
+
+<body>
+</body>
+</html>

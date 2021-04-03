@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box1{
+        width: 200px;
+        height: 100px;
+        background-color: #0D7FD1;
+    }
+    #box2{
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+    }
+
+    #box3{
+        width: 200px;
+        height: 100px;
+        background-color: red;
+    }
+
+    #box4{
+        width: 200px;
+        height: 100px;
+        background-color: gray;
+    }
+</style>
+<body>
+<div id="box1" onclick="alert('大头宝贝!!!')"></div>
+
+<div id="box2" onclick="func2(this)"></div>
+
+<div id="box3" ></div>
+
+<div id="box4"></div>
+<script type="text/javascript">
+    //this在绝大多数中指向windows，但在某些情况下不指向this,例如情况二、三
+
+
+    //情况一
+    //这里的this指向window
+    console.log(this);
+
+
+    //情况二
+    function func2(self){
+        //事件处理程序,这里指向box2
+        console.log(self);
+        self.style.backgroundColor = "black";
+
+    }
+
+    //情况三
+    var div3 = document.getElementById("box3");
+    div3.onclick = function (){
+        //这里指向box3
+        console.log(this);
+    }
+
+
+</script>
+</body>
+</html>

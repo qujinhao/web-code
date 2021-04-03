@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            字符串分割
+            split
+            [格式]字符串.split(分隔符，生成的数组的长度)
+            返回值：通过分隔符，分割成装有子串的数组
+            [注]1.分隔符，整体
+                2.会分割出空字符
+                3.如果分隔符是空字符""，那么我们字符串会分割成单字符
+                4.字符串=》数组split  数组=》字符串join
+        */
+        
+        var str = "This is a box";
+        var arr = str.split(" ");
+        //var arr = str.split(" ", 2);
+        // var arr = str.split("");
+        alert(arr);
+        alert(arr.join("="));
+    </script>
+</head>
+
+<body>
+</body>
+</html>

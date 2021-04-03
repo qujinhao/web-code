@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+    <link rel="stylesheet" href="magnifiler.css">
+</head>
+
+<body>
+    <div class="magnifier">
+        <div class="left">
+           <img src="small.jpg" alt=""> 
+            <div class="float"></div>
+            <div class="mask"></div>
+        </div>
+        <div class="right"></div>
+    </div>
+    <script src="../../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script src="magnifiler.js"></script>
+    <script>
+        $('.magnifier').magnifier();
+    </script>
+</body>
+</html>
+

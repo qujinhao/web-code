@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        /*
+            通过promise这个构造函数，来创建一个对象。这个promise对象，有三种状态：pending、fulfill、reject状态。
+            promise构造函数，有一个参数，这个参数是一个回调，这个回调，接受两个参数，这两个参数都能够改变。promise对象的状态，一个参数，可以将pending===》fulfill，而第二个参数，可以将状态pending==>reject
+        */
+        
+      //  var promise = new Promise(function(resolve, reject){
+//            if(/*成功*/){
+//               resolve();
+//            }else{
+//               reject();
+//               }   
+//        })
+//        
+        /*
+        通过.then拿到暴露出来的结果，.then是一个全新的promise函数，.then允许两个函数作为参数，一个函数拿到成功的暴露结果，一个拿失败暴露的结果。
+        通过catch获取一个指定发生错误时的回调函数。error为错误信息。
+        */
+        
+        
+         var promise = new Promise(function(resolve, reject){
+             setTimeout(function(){
+                 var num = Math.floor(Math.random() * 100);
+                 if(num % 2 === 0){
+                     resolve(num);
+                 }else{
+                     reject(num);
+                 }
+             }, 3000); 
+         });
+                                   
+        promise.then(function(num){
+             
+             console.log('resolve:' + num);
+         }).catch(function(num){
+                  console.log('reject:' + num);
+                  })
+    </script>
+</body>
+</html>

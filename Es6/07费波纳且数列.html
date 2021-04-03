@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function* feiBo(n){
+            let a = 0;
+            let b = 1;
+            for(let i = 0; i < n; i++){
+                yield a;
+                let tmp = a + b;
+                a = b;
+                b = tmp;
+            }
+            //console.log(tmp);
+        }
+        var f = feiBo(5);
+        for(let i of f){
+            console.log(i);
+        }
+    </script>
+</body>
+</html>

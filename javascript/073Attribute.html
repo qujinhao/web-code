@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            属性节点
+            attribute属性返回该节点的属性节点集合
+            
+            
+            
+            
+            属性
+            attributes.length    返回i属性节点个数
+        */
+        
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            //alert(oDiv.attributes);  //[object NamedNodeMap]
+            
+            //alert(oDiv.attributes.length);
+            
+            
+            
+            //访问其中一个属性
+           // alert(oDiv.attributes.getNamedItem("id"));  //[object Attr]
+            //alert(oDiv.attributes["id"]);
+            
+            
+            /*
+                属性节点
+                nodeName    nodeType    nodeValue
+                属性名       类型2         值
+            */
+            
+            alert(oDiv.attributes["id"].nodeName);
+            alert(oDiv.attributes["id"].nodeType);
+            alert(oDiv.attributes["id"].nodeValue);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <div id = "div1" title = "hello" name = "world" class = "box"></div>
+</body>
+</html>

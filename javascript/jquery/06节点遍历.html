@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <div id="container">
+        <ul class="list">
+            <li class="item">
+                <p>1</p>
+            </li>
+            <li class="item">
+                <p>2</p>
+            </li>
+            <li class="item">
+                <p class="vip">3</p>
+            </li>
+            <li class="item">
+                <p>4</p>
+            </li>
+            <li class="item">
+                <p>5</p>
+            </li>
+        </ul>
+    </div>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        var $li2 = $('li:eq(1)');
+        $li2.children().css('background','blue'); //选取子元素
+        $li2.parent().css('color', 'yellow');  //选取父元素
+        $li2.parents('div#container').append('<h2>你好</h2>');//选取当前元素的所有父元素
+        
+        
+        $('#container').find('p.vip').css({  //寻找元素
+            background:'black',
+            color:'white'
+        });
+        
+        $li2.next().css({fontSize:'25px'});  //当前元素的下一个元素
+         $li2.prev().css({fontSize:'25px'});  //当前元素的上一个元素
+        
+        
+        $li2.siblings().css('fontWeight', 'bold');  //返回被选元素的所有同级元素。
+    </script>
+</body>
+</html>

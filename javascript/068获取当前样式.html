@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+           window.onload = function(){
+              var oDiv = document.getElementById("div1");
+               //alert(oDiv.style.width);
+               //alert(oDiv.style.backgroundColor);
+               
+               //[注]我们通过上述操作，只能找到行间的css样式
+               /*
+                    获取当前有效样式
+                    
+                    getComputedStyle(元素节点)[获取样式类型];  火狐/谷歌/safari支持
+                    
+                    
+                    元素节点.currentStyle[获取样式类型]；   IE 
+               */
+               
+               //alert(getComputedStyle(oDiv)["width"]);
+               
+               alert(getStyle(oDiv, "width"));
+
+ }
+           //获取当前样式的兼容函数
+           function getStyle(elem, attr){
+               return elem.currentStyle ? elem.currentStyle[attr] : getComputedStyle(elem)[attr];
+           }
+    </script>
+    <style type="text/css">
+        #div1{
+            background:red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id = "div1" style="width: 300px; height: 300px;"></div>
+</body>
+</html>

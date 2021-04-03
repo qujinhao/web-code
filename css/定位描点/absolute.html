@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .fu{
+        width: 100px;
+        height: 80px;
+        background: #ff9999;
+        margin: 0 auto;
+        position: relative;
+    }
+    .box{
+        width: 100px;
+        height: 80px;
+        background: blue;
+        position: absolute;
+        top: 100px;
+        left: 50px;
+    }
+/*
+relative:生成相对定位的元素，相对于其正常位置进行定位。(类似坐标轴中的原点)
+absolute:生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。
+*/
+</style>
+<body>
+<div class="fu">
+    <div class="box"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            数组长度
+            arr.length访问    数组元素的个数
+            【注】length属性，不是只读，可以设置
+        */
+        var arr = ["red", "blue", "green"];
+//        arr.length = 2;
+//        alert(arr);
+        
+        
+        
+        
+        /*
+            数组元素的访问和赋值，都是通过数组下标完成
+            【注】小标就是索引，即元素的序号，从0开始，小标最大取值是：数组的长度（length）-1
+            [注]下标可以是变量或者表达式
+        */
+        
+        /*var arr = [10, 20, 30, 40, 50];
+        alert(arr[1+2]);*/
+        
+        
+        
+        
+        /*
+            数组遍历：数组和循环结合使用。js中数组和循环是绝配
+        */
+        
+      /*  var arr = [];
+        for(var i = 0; i < 10; i++){
+            arr[i] = i * i;  
+        }*/
+        //alert(arr);
+        
+        
+        
+        
+        //通过循环给每一个元素赋值，随机数
+        /*
+            随机数
+            Math.random()   可以随机0~1之间任意的数
+        */
+      /*  var arr = [];
+        for(var i =0; i < 10; i++){
+            arr[i] = Math.random();
+        }
+        alert(arr);*/
+        
+        
+        
+        /*
+            for...in进行遍历    快速遍历
+            【格式】
+            for(var 变量 in 数组){
+            
+            }
+        */
+        for(var i in arr){
+            document.write(arr[i] + "</br>");
+        }
+    </script>
+</head>
+
+<body>
+</body>
+</html>

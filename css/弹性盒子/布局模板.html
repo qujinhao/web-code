@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html,body{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .header{
+        height: 100px;
+        background: #666;
+    }
+    .main{
+        background: #eee;
+        flex: 1;
+        display: flex;
+    }
+    .left{
+        width: 100px;
+        background: #f00;
+    }
+    .center{
+        background: #0f0;
+        flex: 1;
+    }
+    .right{
+        width: 100px;
+        background: #00f;
+    }
+    .footer{
+        height: 100px;
+        background: #666;
+    }
+</style>
+<body>
+    <div class="header">header</div>
+    <div class="main">
+        <div class="left">left</div>
+        <div class="center">center</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+</html>

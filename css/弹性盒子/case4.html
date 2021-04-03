@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    ul li{
+        list-style: none;
+    }
+    ul{
+        height: 100px;
+        padding: 10px;
+        background: #eee;
+        display: flex;
+    }
+    li{
+        padding: 10px;
+        background: #ff0;
+        margin: 5px;
+    }
+    li:nth-child(1){
+        align-self: auto;
+    }
+    li:nth-child(2){
+        align-self: flex-start;
+    }
+    li:nth-child(3){
+        align-self: flex-end;
+    }
+    li:nth-child(4){
+        align-self: center;
+    }
+    li:nth-child(5){
+        align-self:baseline;
+        padding: 20px 10px;
+    }
+    li:nth-child(6){
+        align-self: baseline;
+    }
+    li:nth-child(7){
+        align-self: stretch;
+    }
+
+</style>
+<body>
+<ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+    <li>d</li>
+    <li>e</li>
+    <li>f</li>
+    <li>g</li>
+    <li>f</li>
+</ul>
+</body>
+</html>

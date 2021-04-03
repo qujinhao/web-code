@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="style.css"/>
+<body style="height: 3000px;">
+    <div id="box1">
+        <p>我是第一个</p>
+        <p>我是第二个</p>
+        <p>我是第三个</p>
+    </div>
+    <div id="box2"></div><div id="box3"></div>
+    <p>爱爱</p>
+    <input type="text" id="put" name="in" placeholder="大头宝贝">
+    <script>
+        var jsDiv1 = document.getElementById("box1");
+        var jsDiv2 = document.getElementById("box2");
+        var jsDiv3 = document.getElementById("box3");
+        var jsInput = document.getElementById("put");
+        var s = jsInput.placeholder;
+        console.log(s);
+        console.log(jsDiv1.nodeName, jsDiv2.nodeName, jsDiv3.nodeName);
+
+    //    节点层次关系属性
+    //获取当前元素的所有子节点（包括换行）
+     var allChilds = jsDiv1.childNodes;
+     console.log(allChilds);
+
+    // 获取当前元素的第一个子节点
+        console.log(jsDiv1.firstChild);
+
+    //  获取当前元素的父节点
+        console.log(jsDiv1.parentNode);
+
+    //   获取当前节点的前一个同级节点
+        console.log(jsDiv3.previousSibling);
+
+    //    获取当前节点的后一个节点
+        console.log(jsDiv2.nextSibling);
+
+    //    获取当前节点的所有属性节点
+        console.log(jsInput.attributes);
+        console.log(typeof (jsInput.attributes));
+
+    </script>
+
+</body>
+</html>

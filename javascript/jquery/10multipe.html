@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button>删除节点</button>
+    <button>删除节点内容</button>
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+        var $el = $('<div><h1>新元素</h1></div>');
+        //$('body').append($el);
+        //$el.appendTo('body');
+        
+        
+        
+        var $newFirst = $('<li>0</li>');
+        //$('ul').prepend($newFirst);
+        $newFirst.prependTo('ul');
+        
+        
+        $('li:eq(3)').after('<li>3.5</li>');
+        $('<li>4.5</li>').insertAfter('li:eq(5)');
+        
+        
+        $('button:first').click(function(){
+            $('li:last').remove();  //删除节点（完整）
+            
+            //$('li:last').empty();  //只是删除节点中的内容
+        })
+        
+         $('button:last').click(function(){
+            //$('li:last').remove();  //删除节点（完整）
+            
+            $('li:last').empty();  //只是删除节点中的内容
+        })
+    </script>
+    
+    
+    
+    
+</body>
+</html>

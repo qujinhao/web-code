@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    img{
+        display: block;
+        width: 500px;
+        height: 375px;
+    }
+    .box{
+        width: 500px;
+        height: 375px;
+        border: 1px solid #000;
+        margin: 50px auto;
+        position: relative;
+    }
+    .btn{
+        position: absolute;
+        right: 5px;
+        bottom: 10px;
+    }
+.btn a{
+    width: 30px;
+    height: 30px;
+    background: rgba(0,0,0,0.5);
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    margin-right: 15px;
+}
+.btn a:hover{
+    background: rgba(0,0,0,1);
+}
+
+.list{
+    width: 500px;
+    height:375px ;
+    overflow: hidden;
+}
+</style>
+<body>
+<div class="box">
+    <div class="btn">
+        <a href="#img1">1</a>
+        <a href="#img2">2</a>
+        <a href="#img3">3</a>
+        <a href="#img4">4</a>
+    </div>
+    <div class="list">
+        <img src="../img/1.jpg" alt="" id="img1">
+        <img src="../img/2.jpg" alt="" id="img2">
+        <img src="../img/3.jpg" alt="" id="img3">
+        <img src="../img/4.jpg" alt="" id="img4">
+    </div>
+</div>
+
+</body>
+</html>

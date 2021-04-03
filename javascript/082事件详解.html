@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style type="text/css">
+        #outer{
+            width: 200px;
+            height:200px;
+            background: red;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id = "outer">
+        <div id = "inner"></div>
+    </div>
+    <script type="text/javascript">
+        var outer = document.getElementById("outer");
+        var inner = document.getElementById("inner");
+        outer.onclick = function(){
+            console.log("outer");
+        }
+        
+        inner.onclick = function(e){
+            var evt = e || event;
+            console.log("inner");
+            //阻止冒泡
+            evt.cancelBubble = true;
+            
+            //evt.stopPropagation()
+            
+        }
+    </script>
+</body>
+</html>

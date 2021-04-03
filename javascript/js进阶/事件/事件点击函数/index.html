@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #box1{
+        width: 200px;
+        height: 100px;
+        background-color: #0D7FD1;
+    }
+    #box2{
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+    }
+
+    #box3{
+        width: 200px;
+        height: 100px;
+        background-color: red;
+    }
+
+    #box4{
+        width: 200px;
+        height: 100px;
+        background-color: gray;
+    }
+</style>
+<body>
+    <div id="box1" onclick="alert('大头宝贝!!!')"></div>
+
+    <div id="box2" onclick="func2()"></div>
+
+    <div id="box3" ></div>
+
+    <div id="box4"></div>
+    <script type="text/javascript">
+        function func2(){
+            alert('nice babay');
+        }
+
+
+        var div3 = document.getElementById("box3");
+        //事件之间相互影响
+        div3.onclick = function (){
+            alert("大头宝贝");
+        }
+        div3.onclick = function (){
+            alert("大头宝贝555");
+        }
+
+
+        var div4 = document.getElementById("box4");
+        //事件监听(事件之间相互不影响)
+        function f(){
+            alert("最爱大头宝贝");
+        }
+        div4.addEventListener('click', f,false);
+
+
+        //清除事件函数
+        div4.removeEventListener('click', f,false);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+color 类型用在input字段主要用于选取颜色
+date 类型允许你从一个日期选择器选择一个日期
+datetime-local 类型允许你选择一个日期和时间 (无时区
+email 类型用于应该包含 e-mail 地址的输入域(在提交表单时，会自动验证 email 域的值是否合法有效:)
+month 类型允许你选择一个月份
+number 类型用于应该包含数值的输入域。(您还能够设定对所接受的数字的限定：)
+
+-->
+<body>
+<form action="#">
+    颜色选取<input type="color" name="color"><br/>
+    <input type="submit">
+</form>
+
+时间选取<input type="date"><br>
+生日选取<input type="datetime-local"><br>
+<form action="#">
+    E-mail<input type="email"><input type="submit">
+</form>
+
+<input type="month"><br>
+<form action="#">
+    <input type="number" min="10" max="20">
+    <input type="submit">
+</form>
+
+</body>
+</html>

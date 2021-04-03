@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body style="height: 3000px">
+    <div id="box"></div>
+    <input type="text" name="in" id="put"/>
+    <a href="red.html" id="link" >点我跳转</a>
+    <script>
+        document.body.onclick = function (){
+            this.style.backgroundColor = "yellow";
+        }
+
+
+        //阻止冒泡
+        document.getElementById("box").onclick = function (e){
+            var ev = e || window.event;
+            ev.stopPropagation(); //阻止冒泡
+            this.style.backgroundColor = "blue";
+        }
+
+        document.getElementById("put").onclick = function (e){
+            var ev = e || window.event;
+            ev.stopPropagation(); //阻止冒泡
+        }
+
+
+        document.getElementById("link").onclick = function (e){
+            var ev = e || window.event;
+            ev.stopPropagation();
+
+            var info = window.confirm("存在风险");
+            if (info == false){
+
+            //    阻止跳转的默认行为
+                ev.preventDefault();
+            }
+        }
+    </script>
+</body>
+</html>

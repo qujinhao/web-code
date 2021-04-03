@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        //1.创建一个XHR对象
+        var xhr = new XMLHttpRequest();
+        
+        //5.监听数据返回
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState !== 4){
+                return;
+            }
+            if(xhr.status >= 200 && xhr.status <= 300){
+                var resp = JSON.parse(xhr.responseText);
+                if(resp.result){
+                    alert('登陆成功');
+                }
+                else{
+                    alert('登录失败');
+                }
+            }
+            else{
+                console.error('请求失败');
+            }
+        }
+        
+        //2.配置这个对象
+        xhr.open('post','./login.php', true);
+        
+        
+        //3.设定请求头，指明body中的数据是何种格式
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        
+        //4.发送数据
+        xhr.send('user=gap&&password=123456');
+        
+    </script>
+</body>
+</html>

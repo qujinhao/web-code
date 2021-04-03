@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background: #f00;
+        transition: all 2s;
+        position: relative;
+        animation: aa 2s linear 0.5s infinite alternate;
+        /*animation-name: aa;*/
+        /*animation-duration: 2s;*/
+        /*animation-timing-function: linear;*/
+        /*animation-delay: 0.5s;*/
+        /*animation-iteration-count: infinite;*/
+        /*animation-direction: alternate;*/
+    }
+
+    .box:hover{
+        transform: translateX(200px);
+    }
+    @keyframes aa {
+      0%  {left: 0;top: 0; transform: scale(2); background: #ff9999}
+      25%  {left: 200px;top: 0 ;transform: scale(1);background: #0D7FD1}
+      50%  {left: 200px;top:200px;transform: scale(2);background: #9ACD32}
+      75%   {left: 0; top: 200px}
+      100%   {left: 0; top:0}
+    }
+</style>
+<body>
+<div class="box"></div>
+</body>
+</html>

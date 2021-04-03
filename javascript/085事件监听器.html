@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style type="text/css">
+        #outer{
+            width: 200px;
+            height:200px;
+            background: red;
+        }
+        #inner{
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+     <div id = "outer">
+        <div id = "inner"></div>
+    </div>
+    <script type="text/javascript">
+        var outer = document.getElementById("outer");
+        var inner = document.getElementById("inner");
+        
+        //outer.onclick = foo;
+        //outer.onclick = null;
+        
+        
+       /* 
+       事件监听器
+        outer.addEventListener("click", foo, false);
+        outer.addEventListener("click", bar, false);*/
+        
+        function foo(){
+            console.log("outer1");
+        }
+        function bar(){
+            console.log("outer2");
+        }
+        function baz(){
+            console.log("inner");
+        }
+        
+        
+        function addEvent(obj, type, fun){  //事件默认行为增加函数
+            if(obj.addEventListener){  //addEventListener() 方法用于向指定元素添加事件句柄。
+                obj.addEventListener(type, fun, false);
+            }else{
+                obj.attachEvent("on"+type, fun);  //attchEvent也是用于向指定元素添加事件句柄，为放置浏览器不兼容
+            }
+        }
+        
+        
+        function removeEvent(obj, type, fun){  //事件默认行为删除函数
+            if(obj.removeEventListener){  //使用 removeEventListener() 方法来移除 addEventListener() 方法添加的事件句柄
+                obj.removeEventListener(type, fun, false);
+            }else{
+                obj.detachEvent("on"+type, fun); //detachEvent也是来移除 addEventListener() 方法添加的事件句柄，放置浏览器不兼容
+            }
+        }
+        
+        
+        addEvent(outer, "click", foo);  //事件增加
+        removeEvent(outer, "click", foo);  //事件移除
+    </script>
+</body>
+</html>

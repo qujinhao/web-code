@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        
+        //prototype 属性使您有能力向对象添加属性和方法。
+        function Person(){
+            
+        }
+        
+        Person.prototype.name = 'xiaoR';
+        Person.prototype.age = 18;
+        Person.prototype.sayHello = function(){
+            alert(this.name);
+        }
+        
+        //1.创建了对象
+        //2.将this指向这个对象
+        //执行构造函数
+        //返回这个对象
+        
+        var p = new Person();
+        //p.sayHello();
+        
+        
+        
+        //当访问一个对象的属性的时候，首先在这个对象本身进行查找
+        //如果找到，就直接返回这个属性，且停止查找
+       //如果没找到，会继续在原型上找，也就是_proto_指向的那个对象
+        
+        function Student(){
+            
+        }
+        Student.prototype = Object.create(Person.prototype);
+        var s = new Student();
+        s.sayHello();
+    </script>
+</body>
+</html>

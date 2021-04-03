@@ -1,0 +1,36 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        
+    /*
+            严格模式
+            【注】从字面意思理解，即这种严格模式下，浏览器会对JS的要求更加苛刻
+            "use strict";
+            写在那个作用域下，这个作用域下所有代码都遵从严格模式
+            【注】不要轻易的在全局范围开头增加“use strict”,建议在作用域中使用
+       */
+        
+   /*     function m1(){
+            max = 10;  //如果再给变量赋值的时候，没有使用var声明该变量，那么当全局变量处理
+            
+        }
+        m1();
+        alert(max);
+        
+        */
+        
+         function m1(){
+            "use strict";
+            max = 10;  //如果再给变量赋值的时候，没有使用var声明该变量，那么当全局变量处理
+            
+        }
+        m1();
+        alert(max);
+        </script>
+</head>
+
+<body>
+</body>
+</html>

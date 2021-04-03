@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow: hidden;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: black;
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+        div:nth-of-type(2){
+            left: 500px;
+            top:500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <script>
+        var speedx = 3;
+        var speedy = 3;
+        
+        var div1 = document.querySelector('div');  //querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素
+        var div2 = document.querySelector('div:nth-of-type(2)');
+        
+        div1.speedx = 5;
+        div1.speedy = 3;
+        div2.speedx = 5;
+        div2.speedy = 3;
+        
+        //块移动函数
+        function move(el){
+           var currentLeft = parseInt(window.getComputedStyle(el).left); //获取元素的CSS样式属性值并将其转成整数
+            var currentTop = parseInt(window.getComputedStyle(el).top);
+            check_border_collision(el);  //调用横纵向碰撞检测
+            
+            
+            var tmpx, tmpy;
+            if(check_block_collision(div1, div2)){//调用块与块碰撞检测,同时进行速度交换
+                //块与块发生碰撞后进行速度交换
+                tmpx = div1.speedx;
+                tmpy = div1.speedy;
+                
+                div1.speedx = div2.speedx;
+                div1.speedy = div2.speedy;
+                
+                div2.speedx = tmpx;
+                div2.speedy = tmpy;
+            }  
+            
+            
+            var left = currentLeft + el.speedx; //设置横向前进的速度
+            var top = currentTop + el.speedy;  // 设置纵向前进速度
+            el.style.left = left + 'px';
+            el.style.top = top + 'px';
+        }
+        
+        
+        
+        //横纵向碰撞检测函数
+        function check_border_collision(el){  
+           // 获取样式属性
+            var style = window.getComputedStyle(el);  
+            var left = parseInt(style.left);
+            var top = parseInt(style.top);
+            var w = parseInt(style.width);
+            var h = parseInt(style.height);
+            
+            //横向碰撞检测
+            if(left < 0){  //如果左边距小于0，证明左边发生碰撞
+                left = 0;
+                el.speedx *= -1; //将前进方向设为反方向
+            }
+            if(left > window.innerWidth - w){  //如果左边距大于（页面宽度减去div宽度）,证明右边碰撞
+                left = window.innerWidth - w;
+                el.speedx *= -1;
+                
+            }
+            
+            //纵向碰撞检测
+            if(top < 0){
+                top = 0;
+                el.speedy *= -1;
+            }
+            if(top > window.innerHeight - h){
+                top = window.innerHeight - h;
+                el.speedy *= -1;
+            }
+            el.style.top = top + 'px';
+            el.style.left = left + 'px';
+        }
+        
+        
+        
+        
+        
+        //块与块碰撞检测
+        function check_block_collision(block1, block2){
+            
+            //获取样式属性
+            var left1 = parseInt(window.getComputedStyle(block1).left);
+            var left2 = parseInt(window.getComputedStyle(block2).left);
+            
+            var top1 = parseInt(window.getComputedStyle(block1).top);
+            var top2 = parseInt(window.getComputedStyle(block2).top);
+            
+            var width1 = parseInt(window.getComputedStyle(block1).width);
+            var width2 = parseInt(window.getComputedStyle(block2).width);
+            
+            var height1 = parseInt(window.getComputedStyle(block1).height);
+             var height2 = parseInt(window.getComputedStyle(block1).height);
+            
+            var center1 = {    //块1的位置坐标
+                x:left1 + width1 / 2,
+                y:top1 + top1 / 2
+            }
+            var center2 = {     //块2的位置坐标
+                x:left2 + width2 / 2,
+                y:top2 + height2 / 2
+            }
+            
+            var diffx = Math.abs(center1.x - center2.x); //块1与块2的水平距离
+            var diffy = Math.abs(center1.y - center2.y);  //块1与块2的垂直距离
+            
+            //如果块1与块2的水平距离diffx小于两个块的宽度和的一半，证明横向发生碰撞
+            //如果块1与块2的垂直距离diffy小于两个块的长度和的一半，证明纵向发生碰撞
+            if(diffx < (width1 + width2) /2 && diffy < (height1 + height2) / 2){
+                return true;
+            }
+            return false;
+        }
+        
+        
+        //每20毫秒调用一次move函数
+        setInterval(function(){
+            move(div1);
+            move(div2);
+        },20); 
+    </script>
+</body>
+</html>

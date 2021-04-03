@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="idDiv"></div>
+    <div class="classDiv"></div>
+    <div class="classDiv"></div>
+    <div class="classDiv"></div>
+    <div class="classDiv"></div>
+
+    <input type="text" name="inputText">
+    <input type="text" name="inputText">
+    <input type="text" name="inputText">
+
+
+    <script type="text/javascript">
+        /*找到要操作的标签对象*/
+        var jsDiv = document.getElementById("idDiv");
+        console.log(jsDiv);
+        console.log(typeof(jsDiv));
+
+
+        //依据class获取节点
+        var jsDivs = document.getElementsByClassName("classDiv");
+        console.log(jsDiv);
+        console.log(typeof (jsDiv));
+
+        //依据name属性获取节点
+        var jsInpsarr = document.getElementsByName("inputText");
+        console.log(jsInpsarr);
+        console.log(typeof(jsInpsarr));
+
+
+    //    获取所有的div
+        var jsAllDiv = document.getElementsByTagName("div");
+        console.log(jsAllDiv);
+    </script>
+</body>
+</html>

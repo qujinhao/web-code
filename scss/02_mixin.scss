@@ -1,0 +1,9 @@
+@mixin font($family,$size, $weight){
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+a{
+  @include font('\5FAE\8F6F\96C5\9ED1',30px,bold);
+}

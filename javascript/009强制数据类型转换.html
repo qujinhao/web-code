@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+        <script type="text/javascript">
+            
+            
+            /*
+                [注]通过方法boolean() 进行强制数据类型转换。
+                【作用】将别的数据类型强制转换为布尔值
+                结论：
+                1.数字0转成布尔值false,所有非0的数字转成布尔值都为true
+                2.空字符串转成布尔值为false,所有非空字符转成布尔值为true
+                3.null和undfined转成布尔值都是false
+            */
+            
+            /*
+                总结：任何其他数据类型除了和字符串做相加操作外，与数字类型做算数运算的时候，其他数据类型都会自动的转换成数字。
+            
+            
+            */
+            
+           // var tmp = Boolean(1); //true
+           // var tmp = Boolean(0); //false
+          //  var tmp = Boolean(-1);  //true
+            
+            //var tmp = Boolean("");    //false
+           // var tmp = Boolean("hello");    //true
+            
+            //var tmp = Boolean(null);    //false
+            var tmp = Boolean(undefined); //false
+            alert(tmp);
+            
+            
+            
+           // var tmp = 1 * "1";  //1
+//            var tmp = 1 / "1";  //1  number
+            
+            //var tmp = 1 + true;
+//            alert(tmp);
+        </script>
+    </head>
+
+    <body>
+    </body>
+</html>

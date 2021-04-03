@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+    function Foo(name){
+        this.name = name;
+        this.showName = function (){
+            console.log(this.name);
+        }
+    }
+    var obj = new Foo('hello');
+    obj.showName();
+    var obj2 = new Foo('hi');
+    obj2.showName();
+
+    console.log(obj.showName == obj2.showName);  //false 比较的不是结果而是函数
+</script>
+</body>
+</html>

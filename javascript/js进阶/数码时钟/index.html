@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    img{
+        width: 100px;
+        height: 50px;
+    }
+    #box{
+
+        font-size: 50px;
+    }
+
+</style>
+<body>
+    <div id="box">
+        <img src="img/图片0.png" alt="">
+        <img src="img/图片0.png" alt="">
+        时
+        <img src="img/图片0.png" alt="">
+        <img src="img/图片0.png" alt="">
+        分
+        <img src="img/图片0.png" alt="">
+        <img src="img/图片0.png" alt="">
+        秒
+    </div>
+    <script>
+        setInterval(function (){
+            var now = new Date();
+            var h= now.getHours();
+            var m = now.getMinutes();
+            var s = now.getSeconds();
+
+
+
+            var _date = [
+              h < 10 ? 0 : Math.floor(h / 10), h % 10,
+              m < 10 ? 0  : Math.floor(m / 10), m % 10,
+              s < 10 ? 0 : Math.floor(s / 10), s % 10
+            ];
+            // console.log(_date);
+
+            var imgs = document.getElementsByTagName('img');
+            for(var i = 0; i < imgs.length; i++){
+                imgs[i].src = "img/图片" + _date[i] + ".png";
+            }
+        },1000)
+    </script>
+</body>
+</html>

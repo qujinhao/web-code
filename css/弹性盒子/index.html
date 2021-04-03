@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        border: 1px solid #f00;
+        overflow: hidden;
+        display: flex;
+    /*    定义弹性盒*/
+    /*    flex-direction: row-reverse;*/
+    /*    flex-direction: column;*/
+    /*    flex-direction: column-reverse;*/
+
+        /*不换行*/
+        /*flex-wrap: nowrap;*/
+
+        /*换行*/
+        /*flex-wrap: wrap;*/
+
+
+        /*justify-content: flex-start;*/
+
+        /*justify-content:flex-end;*/
+
+        /*justify-content:center;*/
+
+
+        /*justify-content: space-between;*/
+
+        justify-content: space-around;
+    }
+    section{
+        width: 50px;
+        height: 50px;
+        border: 1px #00f solid;
+        float: left;
+    }
+
+
+</style>
+<body>
+<div class="box">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+    <section>6</section>
+    <section>7</section>
+    <section>8</section>
+</div>
+</body>
+</html>

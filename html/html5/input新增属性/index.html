@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+form 属性规定输入域所属的一个或多个表单。
+提示:如需引用一个以上的表单，请使用空格分隔的列表。
+
+
+The formaction 属性用于描述表单提交的URL地址.
+The formaction 属性会覆盖<form> 元素中的action属性.
+
+
+
+formenctype 属性描述了表单提交到服务器的数据编码 (只对form表单中 method="post" 表单)
+formenctype 属性覆盖 form 元素的 enctype 属性。
+-->
+<body>
+<form action="demo-form.php" id="form1">
+    First name: <input type="text" name="fname"><br>
+    <input type="submit" value="提交">
+</form>
+
+<p> "Last name" 字段没有在 form 表单之内，但它也是 form 表单的一部分。</p>
+
+Last name: <input type="text" name="lname" form="form1">
+
+<p><b>注意:</b> IE 不支持 form 属性</p>
+
+
+
+
+<form action="demo-form.php">
+    First name: <input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    <input type="submit" value="提交"><br>
+    <input type="submit" formaction="demo-admin.php"
+           value="提交">
+</form>
+
+
+<!--第一个提交按钮已默认编码发送表单数据，第二个提交按钮以 "multipart/form-data" 编码格式发送表单数据:-->
+<form action="demo-post_enctype.php" method="post">
+    First name: <input type="text" name="fname"><br>
+    <input type="submit" value="提交">
+    <input type="submit" formenctype="multipart/form-data"
+           value="以 Multipart/form-data 提交">
+</form>
+
+
+</body>
+</html>

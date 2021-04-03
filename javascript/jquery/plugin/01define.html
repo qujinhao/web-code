@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <script src="../../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script>
+        //1.jquery的插件，定义在jquery.fn的基础上
+        //2.命名冲突的解决
+        //3.循环jquery对象中的每个对象
+        //4.在函数中，将jquery返回（this）
+        
+        (function($){
+            $.fn.extend({
+                randomColor:function(){
+                    
+                    function random(){
+                        var r = Math.floor(Math.random() * 256);
+                        var g = Math.floor(Math.random() * 256);
+                        var b = Math.floor(Math.random() * 256);
+                        
+                        return 'rgb(' + r +', ' + g +', ' + b +')';  //返回颜色rgb的值
+                    }
+                    
+                   //this指向的就是我们通过指向器选取到的所有元素组成的伪数组
+                    this.each(function(index){  //遍历元素
+                        $(this).css({
+                            background:random()
+                        })
+                    })
+                    return this;
+                }
+            })
+        })(jQuery);  //立即执行函数
+        
+        $('div').randomColor();
+        
+    </script>
+</body>
+</html>

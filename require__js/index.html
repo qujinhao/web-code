@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图形编辑器</title>
+</head>
+<style>
+    .tool-bar{
+        margin-bottom: 10px;
+    }
+    canvas{
+        background: #ECECEC;
+        cursor: default;
+    }
+</style>
+<body>
+<div class="tool-bar">
+    <button id="btn-line">画直线</button>
+    <button id="btn-rect">画矩形</button>
+    <button id="btn-oval">画圆型</button>
+    <button id="btn-clear">清空画布</button>
+    <span id="hint" style="color: red; ">当前操作：画直线</span>
+</div>
+<canvas id="canvas" width="800" height="600"></canvas>
+<script src="js/require.js" type="text/javascript" data-main="js/main" charset="UTF-8"></script>
+<script>
+    require(['app/point','app/line','app/rect','app/arc','app/utils'],
+        function (Point,Line,Rect,Arc,Utils){
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext('2d');
+            var canvasRect = canvas.getBoundingClientRect();//得到canvas所在矩形
+
+            canvas.addEventListener('mousedown',handleMouseDown);
+            canvas.addEventListener('mousemove',handleMouseMove);
+            canvas.addEventListener('mouseup',handleMouseUp);
+
+
+            //给对应id的dom元素绑定点击事件
+            function bindClick(domID,handler){
+                document.getElementById(domID).addEventListener('click',handler)
+            }
+            bindClick('btn-clear',menuBtnClicked);
+            bindClick('btn-line',menuBtnClicked);
+            bindClick('btn-rect',menuBtnClicked);
+            bindClick('btn-oval',menuBtnClicked);
+
+
+
+            var mouseDown = false;
+            var selection = 1;  //0,1,2分别代表直线、矩形、圆形
+
+            var downPoint = new Point(0,0);
+            var movePoint = new Point(0,0);
+            var upPoint = new Point(0,0);
+
+            var line,rect,arc;
+
+
+            //处理鼠标按下事件
+            function handleMouseDown(event){
+                downPoint.x = event.clientX-canvasRect.left;
+                downPoint.y = event.clientY-canvasRect.top;
+                if(selection===0){
+                    line=new Line(downPoint,downPoint);
+
+
+                    line.startPoint = downPoint;
+                }
+                else if(selection===1){
+                    rect = new Rect(new Point(downPoint.x,downPoint.y),0,0);
+                }else if(selection === 2){
+                    arc= new Arc(new Point(downPoint.x,downPoint.y),0);
+                }
+                mouseDown = true;
+            }
+
+            //处理鼠标移动事件
+            function handleMouseDown(event){
+                movePoint.x = event.clientX-canvasRect.left;
+                movePoint.y = event.clientY-canvasRect.top;
+                if(movePoint.x == downPoint.x && movePoint.y == downPoint.y){
+                    return;
+                }
+                if(movePoint.x == upPoint.x && movePoint.y == upPoint.y){
+                    return;
+                }
+                if(mouseDown){
+                    mouseDown = false;
+                    clearCanvas();
+                    if(selection==0){
+                        line.endPoint = upPoint;
+                        if(!downPoint.equals(upPoint)){
+                            Utils.addHistory(new Line(new Point(downPoint.x,downPoint.y),new Point(upPoint.x,upPoint.y)));
+                        }
+                    }else if(selection==1){
+                        rect.width = upPoint.x-downPoint.x;
+                        rect.height = upPoint.y-downPoint.y;
+                        Utils.addHistory(new Rect(new Point(downPoint.x,downPoint.y),rect.width,rect.height));
+                    }
+                    else if(selection ==2){
+                        Utils.addHistory(new Arc(new Point(arc.startPoint.x,arc.startPoint.y),arc.radius));
+                    }
+                    clearCanvas();
+                    Utils.drawHistory(context);
+                }
+            }
+
+            //处理鼠标抬起事件
+            function handleMouseDown(event){
+                upPoint.x = event.clientX-canvasRect.left;
+                upPoint.y = event.clientY-canvasRect.top;
+
+                if(mouseDown){
+                    clearCanvas();
+                    if(selection==0){
+                        line.endPoint = movePoint;
+                        Utils.drawLine(context,line);
+                    }else if(selection==1){
+                        rect.width = movePoint.x-downPoint.x;
+                        rect.height = movePoint.y-downPoint.y;
+                        Utils.drawRect(context,rect);
+                    }
+                    else if(selection ==2){
+                        var x = movePoint.x - downPoint.x;
+                        var y = movePoint.y - downPoint.y;
+                        arc.radius = x>y?(y/2):(x/2);
+                        if(arc.radius<0){
+                            arc.radius = -arc.radius;
+                        }
+                        arc.startPoint.x = downPoint.x + arc.radius;
+                        arc.startPoint.y = downPoint.y + arc.radius;
+                        Utils.drawRect(context,arc);
+                    }
+                    Utils.drawHistory(context);
+                }
+            }
+
+
+
+        //    清空画布
+
+            function clearCanvas(){
+                context.clearRect(0,0,canvas.width,canvas.height);
+            }
+        //    菜单按钮的点击事件处理
+            function  menuBtnClicked(event){
+                var domID = event.srcElement.id;
+                if(domID == 'btn-clear'){
+                    clearCanvas();
+                    Utils.clearHistory();
+                }else if(domID == 'btn-line'){
+                    selection = 0;
+                    showHint('当前操作：画直线');
+                }else if(domID == 'btn-rect'){
+                    selection = 1;
+                    showHint('当前操作：画矩形');
+                }else if(domID == 'btn-oval'){
+                    selection = 2;
+                    showHint('当前操作：画圆形')
+                }
+            }
+            function showHint(msg){
+                document.getElementById("hint").innerHTML = msg;
+            }
+        })
+</script>
+</body>
+</html>

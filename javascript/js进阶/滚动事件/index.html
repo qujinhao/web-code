@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="height: 3000px">
+<script type="text/javascript">
+    window.onscroll = function (){
+        //滚动事件
+        console.log("发生了滚动");
+        var a = document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(a);
+        if(a == 500){
+            console.log("加载新数据");
+        }
+    }
+</script>
+</body>
+</html>

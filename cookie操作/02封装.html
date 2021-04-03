@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        
+      
+        
+        function setCookie(name, value, day){
+            var oDtae = new Date();
+            document.cookie = name + "=" + value + ";expires=" + oDtae;
+        }
+        setCookie("name1", "honny", 1);
+        setCookie("name2", "honny2", 1);
+        
+       // console.log(document.cookie);
+        
+        
+        
+        
+        
+        function getCookie(name){
+            var str = document.cookie;  //查询cookie
+            var arr = str.split("; ");
+            for(var i = 0; i < arr.length; i++){
+                var arr1 = arr[i].split("=");
+                if(arr1[0] == name){
+                    return arr1[1];
+                }
+            }
+        }
+        //console.log(getCookie("name2"));
+        
+        
+        
+        
+        
+        function removeCookie(name){
+            setCookie(name, 1, -1);
+        }
+        removeCookie("name1");
+        console.log(getCookie("name1"));
+    </script>
+</body>
+</html>

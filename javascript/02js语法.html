@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+    /*
+        1.type = "text/javascript"说明当前script标签中文本类型
+        2.所有代码必须写在script标签中
+        3.为了语法规范，script标签写在head标签中
+        4.可以引入多个script标签，多个script标签之间，顺序执行。
+        5.js代码可以外部引入  src引入外部文件
+        6.如果当前script标签作用是引入外部文件，这个script标签中，就不能写代码
+    */
+    
+    alert("hello world!"); //在页面上弹出警告框
+    //【注】每一条js语句都必须在后面加分号，语法规范。
+    
+    //document.write("Hello World!"); //在当前文本上输入内容
+    
+    
+    </script>
+    
+    <script type="text/javascript">
+      //alert("hello world!");   
+       
+    </script>
+    <script type="text/javascript" src="demo.js">
+        alert(1);  //这里代码执行不到
+    </script>
+<body>
+</body>
+</html>

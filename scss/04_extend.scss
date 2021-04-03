@@ -1,0 +1,13 @@
+.message{
+  width: 100px;
+  height: 30px;
+  background: deepskyblue;
+  color:#000;
+  border-radius: 5px;
+}
+
+.warning-message{
+  @extend .message;
+  background: yellow;
+  color: deeppink;
+}

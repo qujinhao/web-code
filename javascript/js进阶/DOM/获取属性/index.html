@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="in" placeholder="大头宝贝" my="我的">
+<button onclick="func()">按钮</button>
+<script type="text/javascript">
+    var jsInput = document.getElementById('in');
+    console.log(jsInput.placeholder);
+
+
+    //获取自定义节点的属性
+    console.log(jsInput.getAttribute("my"));
+
+    function func(){
+        // jsInput.placeholder = "最爱大宝贝";
+
+        //设置自定义属性
+        // jsInput.setAttribute('my',"我最最");
+
+        //移除属性
+        jsInput.removeAttribute("placeholder");
+        console.log(jsInput)
+    }
+</script>
+</body>
+</html>

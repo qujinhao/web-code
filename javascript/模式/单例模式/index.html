@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script src="Singleton.js"></script>
+    <script>
+        
+        // //案例：王者荣耀--暗影主宰
+        var s1 = new Singleton();
+        var s2 = new Singleton();
+        //alert(s1 === s2);
+        
+        var s3 = Singleton();
+        alert(s1 === s3);
+    </script>
+</body>
+</html>

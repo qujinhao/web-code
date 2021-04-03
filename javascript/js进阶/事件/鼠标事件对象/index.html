@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<body>
+    <div id="in" style="width: 100px; height: 100px; background-color: red;"></div>
+    <script>
+        var lis = document.getElementById("in");
+        lis.addEventListener("click",function (e){
+            var ev = e || window.event;
+            console.log(ev);
+        },false)
+    </script>
+</body>
+</html>

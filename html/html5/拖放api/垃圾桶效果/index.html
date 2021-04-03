@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul{
+        overflow: hidden;
+    }
+    li{
+        width: 80px;
+        height: 50px;
+        text-align:center ;
+        line-height: 50px;
+        border:1px solid #000;
+
+        margin: 20px;
+        list-style: none;
+        float: left;
+
+    }
+    #out{
+        width: 100px;
+        height: 150px;
+        background: url(img/1.jpg) no-repeat;
+        margin: 100px;
+        background-size: 100%;
+        text-align: center;
+        color: #0D7FD1;
+        position: relative;
+        border: 1px solid white;
+    }
+
+
+</style>
+<body>
+    <ul>
+<!--      draggable="true" 表明允许拖拽  -->
+        <li draggable="true">白色垃圾</li>
+        <li draggable="true">大气垃圾</li>
+        <li draggable="true">香蕉皮</li>
+        <li draggable="true">易拉罐</li>
+        <li draggable="true">纸屑</li>
+    </ul>
+        <p id="txt"></p>
+        <div id="out"></div>
+    <script type="text/javascript">
+        window.onload = function (){
+            var aLi = document.getElementsByTagName('li');
+            var oDiv = document.getElementById("out");
+            var txt = document.getElementById("txt");
+            var img = document.createElement('img');
+            var targetLi = null;
+            img.src = "img/2.jpg";
+
+
+
+            for(var i = 0; i < aLi.length; i++){
+//	当用户开始拖拽一个元素或选中的文本时触发（见开始拖拽操作）
+                aLi[i].ondragstart=function (ev){
+
+
+                    ev.dataTransfer.setData('Text',this.innerHTML);
+                    ev.dataTransfer.setDragImage(img,20,20)
+                }
+                //当拖拽操作结束时触发 (比如松开鼠标按键或敲“Esc”键). (见结束拖拽)
+                aLi[i].ondragend=function (){
+                    this.style.background="";
+                }
+            }
+
+            //当拖拽元素或选中的文本到一个可释放目标时触发（见 指定释放目标）。
+            oDiv.ondragenter=function (){
+                this.style.borderColor = 'red';
+            }
+
+            //当元素或选中的文本被拖到一个可释放目标上时触发（每100毫秒触发一次）
+            oDiv.ondragover = function (ev){
+                ev.preventDefault();  //阻止默认行为
+            }
+
+            //当拖拽元素或选中的文本离开一个可释放目标时触发。
+            oDiv.ondragleave =function (){
+                this.style.borderColor = "#000";
+            }
+
+            //当元素或选中的文本在可释放目标上被释放时触发（见执行释放）。
+            oDiv.ondrop = function (ev){
+                this.style.borderColor = "#000";
+                var oText = ev.dataTransfer.getData('Text');
+                txt.innerHTML="删除的是："+oText;
+                targetLi.parentNode.removeChild(targetLi);
+            }
+        }
+    </script>
+</body>
+</html>

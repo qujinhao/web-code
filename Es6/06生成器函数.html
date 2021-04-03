@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+       /* 
+        function* foo(x){
+            yield x+1;
+            yield x+2;
+            return x+3;
+        }
+        
+        var f = foo(1);
+        console.log(f.next(),f.next(),f.next());
+        */
+        
+        
+        
+        //next（）参数表示上一次的返回值
+        function* foo(x){
+            var y = 2 *(yield(x + 1));
+            var z = yield(y / 3);
+            return(x+y+z);
+        }
+        var it = foo(5);
+        console.log(it.next(3));
+        console.log(it.next(12));
+    </script>
+</body>
+</html>

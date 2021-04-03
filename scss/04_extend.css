@@ -1,0 +1,12 @@
+.message, .warning-message {
+  width: 100px;
+  height: 30px;
+  background: deepskyblue;
+  color: #000;
+  border-radius: 5px; }
+
+.warning-message {
+  background: yellow;
+  color: deeppink; }
+
+/*# sourceMappingURL=04_extend.css.map */

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+canvas:一个画布在网页中是一个矩形框，通过 <canvas> 元素来绘制.
+注意: 默认情况下 <canvas> 元素没有边框和内容
+
+
+
+canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成：
+
+
+在Canvas上画线，我们将使用以下两种方法：
+moveTo(x,y) 定义线条开始坐标
+lineTo(x,y) 定义线条结束坐标
+
+在canvas中绘制圆形, 我们将使用以下方法:
+arc(x,y,r,start,stop)
+
+
+使用 canvas 绘制文本，重要的属性和方法如下：
+font - 定义字体
+fillText(text,x,y) - 在 canvas 上绘制实心的文本
+strokeText(text,x,y) - 在 canvas 上绘制空心的文本
+-->
+<body>
+<canvas id="myCanvas" width="500" height="300" style="border:1px solid #c3c3c3;">
+    您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+
+<script>
+//画矩形
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+//     ctx.fillStyle="#FF0000";
+//     ctx.fillRect(0,0,150,75);
+
+    // document.write(c.width);
+    //
+    // var c1 = window.getComputedStyle(c,null).width;
+    // console.log(c1);
+    //画线
+    // ctx.moveTo(0,0);
+    // ctx.lineTo(200,100);
+    // ctx.stroke();
+
+    //画圆
+    // ctx.beginPath();
+    // ctx.arc(95,50,40,0,2*Math.PI);
+    // ctx.stroke();
+
+
+//   绘制文本
+    ctx.font="30px Arial";
+    ctx.fillStyle = "blue"
+    // ctx.fillText("Hello World",160,150);
+    ctx.strokeText("大头、大头，下雨不愁！！！",120,150)
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background: red">
+<button onclick="func1()">黄色</button>
+<button onclick="func2()">上一页</button>
+<button onclick="func3()">下一页</button>
+<script type="text/javascript">
+    function func1(){
+        window.location.assign("yellow.html")
+    }
+    function func2(){
+        window.history.back()
+    }
+    function func3(){
+        window.history.forward()
+    }
+</script>
+</body>
+</html>

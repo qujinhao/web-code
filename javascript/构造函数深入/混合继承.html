@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        
+        Person.prototype.sayHello = function(){
+            alert(this.name);
+        }
+        
+        function Student(name, age, id){
+            Person.apply(this, [name, age]);
+            this.id = id;
+        }
+        Student.prototype = Object.create(Person.prototype);
+        Student.prototype.study = function(){
+            
+        }
+        var s = new Student();
+       s.sayHello();
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "18267910",
+      "name": "查验",
+      "font_class": "chayan",
+      "unicode": "e98c",
+      "unicode_decimal": 59788
+    },
+    {
+      "icon_id": "18267912",
+      "name": "发票",
+      "font_class": "fapiao",
+      "unicode": "e98d",
+      "unicode_decimal": 59789
+    },
+    {
+      "icon_id": "18267916",
+      "name": "服务器",
+      "font_class": "fuwuqi",
+      "unicode": "e98e",
+      "unicode_decimal": 59790
+    },
+    {
+      "icon_id": "18267919",
+      "name": "工厂",
+      "font_class": "gongchang",
+      "unicode": "e98f",
+      "unicode_decimal": 59791
+    }
+  ]
+}

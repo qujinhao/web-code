@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+    <script src="../jquery-3.5.1/jquery-3.5.1.min.js"></script>
+    <script>
+       /* $.ajax({
+            type:'get',
+            url:'person.json',
+            success:function(resp){
+                alert(resp.hobby);
+            },
+            error:function(){
+                alert('错误');
+            }
+        })
+        */
+        
+        
+        
+        
+        
+        $.ajax({
+            type:'get',
+            url:'person.json'
+        }).done(function(){
+            alert(1);
+        }).fail(function(){
+            
+        })
+    </script>
+</body>
+</html>

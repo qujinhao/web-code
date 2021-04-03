@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        document.onkeypress = function(){
+            //按下字符键触发
+            console.log("keypress");
+        }
+        
+        document.onkeydown = function(){
+            //按下任意键触发
+            console.log("keydown");
+        }
+        
+        //altkey   ctrlkey    shiftkey
+        document.onkeydown = function(e){
+            var evt = e || event;
+            console.log(evt.altKey, evt.ctrlKey, evt.shiftKey);
+            //判断是否按了某个键
+            console.log(evt.keyCode);
+        }
+    </script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+            /*
+                对象的创建
+                对象中的数据，我们叫做对象的属性
+                对象中存储的函数，我们叫做对象的方法
+            */
+        //使用new运算符创建对象
+       // var person = new Object();
+        //给对象添加数据/属性
+        //person.name = "xxx";
+        //person.age = 18;
+        //给该对象添加函数/方法
+        //person.showName = function(){
+        //    alert(person.name);
+       // }
+        
+        //如果，我们想要访问上述对象的属性和函数
+        //alert(person.name);
+        
+        
+        //调用对象的方法
+       // person.showName();
+        
+        
+        //new运算符可以省略
+        //var person = Object();
+        
+        //使用常量/字面量去创建对象
+        var person = {};
+        person.name = "xxx";
+        person.age = 18;
+        person.showName = function(){
+            alert(person.name);
+        }
+        person.showName();
+        
+        
+        /*
+            delete  对象属性删除
+            
+        */
+        alert(person.name);
+        delete person.name;
+        alert(person.name);
+        
+    </script>
+</head>
+
+<body>
+</body>
+</html>

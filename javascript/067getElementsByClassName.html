@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+            /*
+               node.getElementsByClassName()
+               功能：获取node节点下，所有符合条件的元素节点
+               参数：class
+               返回值：所有符合条件的元素节点组成的数组
+               
+               【注】getElementsByClassName在低版本IE浏览器不支持
+            */
+        window.onload = function(){
+            //var nodes = document.getElementsByClassName("box");
+            //alert(nodes); //[object HTMLCollection]
+            
+            
+            
+            
+            //获取ul下的class为box的元素节点
+          var oUl = document.getElementById("ul1");
+            var nodes = oUl.getElementsByClassName("box");
+            
+            
+            for (var i = 0; i <nodes.length; i++){
+                alert(nodes[i].innerHTML);
+            }
+        }
+        
+            
+            
+            
+        }
+/*        window.onload = function(){
+            var oUl = document.getElementById("ul1");
+            var nodes = elementByClassName(oUl, "box");
+          
+            alert(oUl);
+            for (var i = 0; i < nodes.length; i++){
+                alert(nodes[i].innerHTML);
+            }
+        }
+            
+            /*
+                封装函数，封装一个兼容的方法
+                
+                *通配符    任意类型的元素节点
+            */
+            function elementByClassName(parent, classStr){
+                //找到parent下所有的元素节点
+                var nodes = parent.getElementsByTagName('*');
+                var result = []; //用记录符合条件的元素节点
+                for (var i = 0; i < nodes.length; i++){
+                    //如果符合条件，添加到数组中
+                    if(nodes[i].className == classStr){
+                        result.push(nodes[i]);
+                    }
+
+                }
+                return result;
+            }
+        */
+    </script>
+</head>
+<body>
+    <ul id = "ul1">
+        <li>111</li>
+        <li class = "box">222</li>
+        <li>333</li>
+        <li class = "box">444</li>
+    </ul>
+    <ol id = "ol1">
+        <li class = "box">555</li>
+        <li>666</li>
+        <li class = "box">777</li>
+        <li>888</li>
+    </ol>
+</body>
+</html>

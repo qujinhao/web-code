@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            document.getElementsByTagName()
+            [注]从node节点开始，找出所有符合条件的元素
+            参数：标签名
+            功能：获取当前页面上所有符合该标准的元素节点
+            返回值：一个装有条件的元素节点的数组
+            
+        */
+        window.onload = function(){
+            //获取当前页面上所有li标签
+           // var aLis = document.getElementsByTagName("li");
+           // alert(aLis.length);  //[object HTMLCollection]是一个数组
+            
+            
+            //获取ul下的所有li标签
+            var oUl = document.getElementById("ul");
+            var aLis = oUl.getElementsByTagName("li");
+            //alert(aLis.length);
+            for (var i = 0; i < aLis.length; i++){
+               // alert(aLis[i].innerHTML);
+                //alert(aLis[i]);
+                alert(aLis.item(i).innerHTML);
+            }
+            
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>1111</li>
+        <li>222</li>
+        <li>3333</li>
+        <li>4444</li>
+    </ul>
+    <ul>
+        <li>1111</li>
+        <li>222</li>
+        <li>3333</li>
+        <li>4444</li>
+    </ul>
+</body>
+</html>

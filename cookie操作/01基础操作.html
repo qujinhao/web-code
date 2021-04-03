@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //查询cookie
+        //console.log(document.cookie);
+        
+        
+        //设置cookie
+        //document.cookie = "username=honny";
+       /* 
+        var oDate = new Date();
+        oDate.setDate(oDate.getDate()+3);
+        document.cookie = "username = honny; expires = " + oDate;
+        */
+        
+        
+        
+        //修改cookie
+        document.cookie = "username=honny";
+        document.cookie = "username=honny1";
+        
+        
+        //删除cookie
+         var oDate = new Date();
+        oDate.setDate(oDate.getDate()-1);
+        document.cookie = "username=honny; expires=" + oDate;
+    </script>
+</body>
+</html>

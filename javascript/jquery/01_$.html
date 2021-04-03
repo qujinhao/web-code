@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <input type="text">
+    <script src="../jquery-3.5.1/jquery-3.5.1.js"></script>
+    <script>
+       // $('li').html('li');
+        $('input').keyup(function(){ //键盘监听事件
+            var v = $(this).val();
+            alert(v);
+            if(v.slice(-2) !== 'px'){  //判断后两个字符是否为px
+                $(this).val(v + 'px');  //在字符加上px
+            }
+            
+        })
+    </script>
+</body>
+</html>

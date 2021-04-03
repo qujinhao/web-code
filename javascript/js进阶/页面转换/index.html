@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<button onclick="func1()">红色</button>
+<button onclick="func2()">黄色</button>
+
+
+
+<script type="text/javascript">
+    // function func1(){
+    //      window.location.assign("red.html");
+    //    window.open("red.html", "blank","width=400px,height=400px,left=20px,top=0") 创建一个窗口
+    //
+    // }
+    // function func2(){
+    //     window.location.assign("yellow.html")
+    // }
+
+
+
+    window.onload = function (){
+      //当页面完全加载成功实则触发该事件
+      alert("页面加载成功");
+    }
+    alert("你凑啥？");
+
+
+    window.onunload = function (){
+      //当页面关闭时触发，只有IE支持
+      alert("确认关闭");
+    }
+
+</script>
+
+
+
+
+</body>
+</html>

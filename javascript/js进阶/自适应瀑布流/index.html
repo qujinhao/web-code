@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js</title>
+</head>
+<style type="text/css">
+    #wrap li {
+        list-style: none;
+        border: 2px solid gray;
+        position: absolute;
+        font-size: 100px;
+        text-align: center;
+        transition: all .5s;
+    }
+</style>
+<body>
+<ul id="wrap"></ul>
+</body>
+<script type="text/javascript">
+    /*每个li的宽度*/
+    var singleLiWidth = 200;
+
+    /*每个li的margin值*/
+    var singleLiMargin = 10;
+
+    /*存放每一列li的总高度*/
+    var eachColHeightArray = [];
+
+    /*初始化是li的数量*/
+    var originalLiCount = 20;
+
+    /*滚动滑轮新增li的数量*/
+    var increaseCount = 30;
+
+    var wrap = document.querySelector("#wrap");
+
+    /*计算每个li的随机高度*/
+    function calculateSingleLiHeightRandom() {
+        var fromHeight = 100;
+        var toHeight = 200;
+        return fromHeight + (toHeight - fromHeight) * Math.random();
+    }
+
+    /*创建li*/
+    function createLi(index) {
+        var li = document.createElement("li");
+        var height = calculateSingleLiHeightRandom();
+        li.style.width = singleLiWidth + "px";
+        li.style.height = height + "px";
+        li.style.lineHeight = height + "px";
+        li.style.margin = singleLiMargin + "px";
+        li.innerHTML = index;
+        wrap.appendChild(li);
+        setLiPosition(li);
+    }
+
+    /*定位每个生成的li位置 绝对定位*/
+    function setLiPosition(li) {
+        var minIndex = 0;
+        var minHeight = eachColHeightArray[0];
+        for (var i = 0; i < eachColHeightArray.length; i++) {
+            if (eachColHeightArray[i] < minHeight) {
+                minIndex = i;
+                minHeight = eachColHeightArray[i];
+            }
+        }
+        li.style.top = minHeight + "px";
+        li.style.left = minIndex * (singleLiWidth + singleLiMargin * 2) + "px";
+        eachColHeightArray[minIndex] += li.clientHeight;
+    }
+
+    /*生成li群*/
+    function generateLiGroup(count) {
+        var lis = document.querySelectorAll("li");
+
+        for (var i = 0; i < count; i++) {
+            createLi(i + 1 + lis.length);
+        }
+    }
+
+    /*初始化存放每列高度的数组为0*/
+    function initEachColHeightArray() {
+        eachColHeightArray = [];
+        var clientWidth = document.body.clientWidth;
+        var cols = parseInt(clientWidth / (singleLiWidth + 2 * singleLiMargin));
+
+        for (var i = 0; i < cols; i++) {
+            eachColHeightArray.push(0);
+        }
+    }
+
+    function init() {
+        initEachColHeightArray();
+
+        generateLiGroup(originalLiCount);
+    }
+
+    window.onscroll = function() {
+        //得到滚动距离
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        //得到页面的视口高度
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //得到总的高度 含滚动长的距离
+        var scrollHeight = document.body.scrollHeight;
+
+        if (scrollTop + clientHeight >= scrollHeight) {
+            generateLiGroup(increaseCount);
+        }
+    }
+
+    window.onmousewheel = function(e) {
+
+        //得到页面的视口高度
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //得到总的高度 含滚动长的距离
+        var scrollHeight = document.body.scrollHeight;
+
+        if (clientHeight == scrollHeight && e.wheelDelta == -120) {
+            generateLiGroup(increaseCount);
+        }
+    }
+
+    window.onresize = function() {
+        initEachColHeightArray();
+
+        var lis = document.querySelectorAll("li");
+
+        for (var i = 0; i < lis.length; i++) {
+            setLiPosition(lis[i]);
+        }
+    }
+
+    init();
+</script>
+</html>

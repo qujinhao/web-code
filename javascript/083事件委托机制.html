@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style type="text/css">
+        li{
+            margin: 10px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script type="text/javascript">
+        var oUl = document.getElementsByTagName("ul")[0];
+        var ali = document.getElementsByTagName("li");
+        
+     /*   
+        for(var i = 0; i < ali.length; i++){
+            ali[i].onclick = function(){
+                console.log(this.innerHTML);
+            }
+        }
+        */
+        
+        
+        //事件委托
+        oUl.onclick = function(e){
+            //console.log("aa");
+            var evt = e || evt;
+            
+            var _target = evt.target || evt.srcElement;
+            
+            if(_target.nodeName.toUpperCase() == "LI"){
+                console.log(_target.innerHTML);
+            }
+            
+        }
+        
+        
+        for(var i = 0; i < 5; i++ ){
+            var oLi = document.createElement("li");
+            oLi.innerHTML = i;
+            oUl.appendChild(oLi);
+}
+    </script>
+</body>
+</html>

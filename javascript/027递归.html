@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            概念：
+            函数自己调用自己，称为递归调用
+            【注】我们可以写出递归，但是我们并不知道他是如何得出结果的
+            
+            函数递归调用：
+            方法：
+                1.首先去找临界值，及无需计算，获得的值
+                2.找这一次和上次的关系
+                3.假设当前函数已经可以使用了，调用自身计算上一次的运行结果，再写出这次运行结果
+            【特点】
+            1.必须有参数 
+            2.必须有return
+            
+            
+        1加到n的和    sum(100) = sum(99) + 100;
+                    sum(n) = sum(n-1) + n;
+                [注]递归会在短时间内，使内存剧增
+        */
+        function sum(n){
+            if(n == 1){
+                return 1;
+            }
+            return sum(n-1) + n;
+        }
+        
+        alert(sum(1000));
+    </script>
+</head>
+
+<body>
+</body>
+</html>

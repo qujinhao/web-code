@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        
+     /*   
+        //   .代表除了换行符以外所有的单个字符
+        var reg = /g..gle/gi;
+        var str = "google--gle";
+        console.log(reg.test(str));
+        console.log(str.match(reg));
+        */
+        
+        
+       /* 
+        //  * 号代表前面的字符可以不出现，也可以出现一次或者多次（0次、或1次、或多次）
+        var reg = /g*gle/gi;
+        var str = "gggggle";
+        console.log(reg.test(str), str.match(reg));
+        
+        */
+        
+        
+      /*  
+        //  + 号代表前面的字符必须至少出现一次（1次或多次）
+        var reg = /g+gle/gi;
+        var str = "gggle";
+        console.log(reg.test(str));
+        */
+        
+        
+       /* 
+        // ? 问号代表前面的字符最多只可以出现一次（0次、或1次）
+        var reg = /g?gle/gi;
+        var str = "ggle";
+         console.log(reg.test(str));
+        */
+        
+       /* 
+        //  []表示可以出现的范围[0-9]
+        var reg = /[0-9]/gi;
+        var str = "abc";
+        console.log(reg.test(str));
+        */
+        
+       /* 
+        //   \w 匹配字母、数字、下划线。等价于 [A-Za-z0-9_]         \W 匹配非字母、数字、下划线
+        var reg = /\w+/gi;
+        var str = "abc13";
+        console.log(reg.test(str), str.match(reg));
+        */
+        
+        
+     /*   
+        //  \d 表示数字[0-9]    \D  表示非数字
+        var reg = /\d+/gi;
+        var str = "12345abc";
+        console.log(reg.test(str), str.match(reg));
+        */
+        
+        
+     /*   
+        // \s匹配空格
+        var reg = /\s+/gi;
+        var str = "good good   study";
+        console.log(str.replace(reg, ""));
+        */
+        
+        
+       /* 
+        //  {m,n}//至少匹配m次，至多匹配n次  逗号之间中间不能有空格
+        var reg = /go{3,6}gle/gi;
+        var str = "goooooogle";
+        console.log(reg.test(str));
+        */
+        
+        
+        
+        //  |或
+        var reg = /google|baidu|bing|yaohoo/gi;
+        var str ="www.baidu.com";
+        console.log(reg.test(str), str.match(reg));
+        
+        
+        
+        // ()f分组  将内容作为一个整体进行匹配
+        var reg = /(g.+gle){4,6}/gi;
+        var str = "googleaaagooglegooglegooglegooglegooglegooglegoogle";
+        console.log(reg.test(str), str.match(reg));
+        console.log(RegExp.$1);
+        
+        
+        
+        //$1 $2
+        var reg = /(.*)\s(.*)/;
+        var str = "taobao baidu";
+        console.log(str.replace(reg, "$2 $1"));
+        
+        
+    </script>
+</body>
+</html>

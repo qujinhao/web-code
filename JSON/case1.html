@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    大头:<span id="first"></span><br/>
+    小T:<span id="second"></span><br/>
+    恋人:<span id="third"></span>
+</p>
+<script>
+    var JSONObject = {
+        "First":"很爱小头",
+        "Second":"很爱大头",
+        "Third":"深深的爱着对方"
+    }
+    document.getElementById("first").innerHTML = JSONObject.First;
+    document.getElementById("second").innerHTML = JSONObject.Second;
+    document.getElementById("third").innerHTML = JSONObject.Third;
+</script>
+</body>
+</html>

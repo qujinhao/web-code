@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    用户名：<input type="text" id = "username">(数字、字母、下划线组成的6-15位字符，且不能以数字开头)
+    <script type="text/javascript">
+        var oInput = document.getElementById("username");
+        oInput.onchange = function(){
+            var val = this.value;
+            var reg = /^[a-zA-Z_]\w{5,14}$/;
+            if(reg.test(val)){
+                console.log("格式正确");
+            }
+            else{
+                console.log("格式错误，请重新输入");
+            }
+        }
+    </script>
+</body>
+</html>

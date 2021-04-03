@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 600px;
+        height: 400px;
+    }
+
+</style>
+<body>
+<div class="box">
+    <button onclick="Play()">播放</button>
+    <button onclick="Pause()">暂停</button>
+    <button onclick="makeBig()">放大</button>
+    <button onclick="makeSmall()">缩小</button>
+    <button onclick="makeNormal()">普通</button>
+    <video src="video/1.mp4" id="video1" width="320" height="280"></video>
+</div>
+<script>
+    var myVideo = document.getElementById('video1');
+    function  Play(){
+        myVideo.play();
+    }
+    function  Pause(){
+        myVideo.pause();
+    }
+    function  makeBig(){
+        myVideo.style.width = 350 + 'px';
+        myVideo.style.height = 300 + 'px';
+    }
+    function makeSmall(){
+        myVideo.style.width = 300 + 'px';
+        myVideo.style.height = 260 + 'px';
+    }
+
+    function makeNormal(){
+        myVideo.style.width = 320 + 'px';
+        myVideo.style.height = 280 + 'px';
+    }
+</script>
+</body>
+</html>

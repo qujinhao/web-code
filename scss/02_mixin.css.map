@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAMA,CAAC;EALC,WAAW,EAMG,MAAsB;EALpC,SAAS,EAK4B,IAAI;EAJzC,WAAW,EAI+B,IAAI",
+"sources": ["02_mixin.scss"],
+"names": [],
+"file": "02_mixin.css"
+}

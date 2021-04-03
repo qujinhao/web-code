@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+
+    }
+    body{
+        width: 320px;
+        overflow: hidden;
+        margin: 20px auto;
+    }
+
+    header,footer{
+        height: 40px;
+        line-height: 40px;
+        background: orange;
+        text-align: center;
+    }
+    li{
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid red;
+        border-top:none;
+        font-size: 15px;
+        text-indent: 20px;
+        list-style: none;
+    }
+
+    #ado{
+        width: 100%;
+        height: 20px;
+        margin-top:10px;
+    }
+    .sty{
+        background: pink;
+
+    }
+
+</style>
+<body>
+
+<header>音乐台</header>
+    <section>
+        <ul>
+            <li>大眠</li>
+            <li>月牙湾</li>
+            <li>森林狂想曲</li>
+            <li>段弋 - 223s</li>
+            <li>不够-收敛</li>
+        </ul>
+    </section>
+<audio src="" id="ado" controls=""></audio>
+<footer>
+    当前播放的是：<span id="con"></span>
+</footer>
+</body>
+<script>
+    var lis = document.getElementsByTagName('li');
+    var ado = document.getElementById("ado");
+    var con = document.getElementById("con");
+
+
+    var arr= ['../audio/憋屈的AD - 大眠 小乐哥.mp3','../audio/月牙湾.mp3','../audio/憋屈的AD - 森林狂想曲 小提琴桑.mp3','../audio/段弋 - 223s（翻自 YNW Melly）.mp3','../audio/果栗程 - 不够-收敛（抖音版）（果栗程 remix）.mp3'];
+    for(var i = 0; i < lis.length; i++){
+        lis[i].onclick = function (){
+            for(var i = 0; i < lis.length; i++){
+                if(this == lis[i]){
+                    lis[i].className = 'sty';
+                    ado.src = arr[i];
+                    ado.play();
+                    con.innerHTML = lis[i].innerHTML;
+
+                    var a =i;
+                    ado.onended = function (){
+                        a ++;
+                        if(a > lis.length - 1){
+                            a = 0;
+                        }
+
+                        for(var j = 0; j < lis.length; j++){
+                            lis[j].className = '';
+                        }
+                        con.innerHTML = lis[a].innerHTML;
+                        ado.src = arr[a];
+                        ado.play();
+                        lis[a].className = 'sty';
+                    }
+
+                }else{
+                    lis[i].className = ''
+                }
+            }
+        }
+    }
+</script>
+</html>

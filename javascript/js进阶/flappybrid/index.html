@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+
+     #res{
+         display: none;
+     }
+    #res h2{
+        text-align: center;
+        padding: 5px 0;
+    }
+    #res img{
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+<body style="background: #aaaaaa;" >
+    <canvas id="canvas" width="800" height="400" ></canvas>
+    <div class="mark" id="mark"></div>
+    <div class="res" id="res">
+        <h2></h2>
+    </div>
+
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+
+//    创建一个图片
+    var img = new Image();
+    img.src = "img/bird0_1.png";
+
+
+    var birdX = 200;
+    var birdY = 100;
+    var birdTimer = null;
+    //等待图片加载结束后在绘图
+    img.onload = function (){
+        if(birdTimer == null){
+        birdTimer = setInterval(function (){
+            if(birdY <= 355){
+                birdY++ ;
+            }
+            //清楚画布，把小鸟下落痕迹去除
+            context.clearRect(0,0,800,400);
+            drawColumn();
+            context.drawImage(img,birdX,birdY);
+            },10);
+        }
+    }
+
+    //设置小鸟起飞
+    document.onmousedown = function (){
+        img.src = "img/bird0_2.png"
+        birdY = birdY - 30;
+    }
+
+//设置降落
+    document.onmouseup = function (){
+        img.src = "img/bird0_0.png";
+    }
+
+
+//柱子
+    var columnArr = [];
+    var columnTimer = null;
+//    创建柱子
+    function createColumn(){
+        columnTimer = setInterval(function (){
+            var column = {}; //柱子容器
+            column.positionX = 800;
+            column.positionY = -Math.round(Math.random()*100 + 100);
+
+            column.imgA = new Image();
+            column.imgB = new Image();
+
+            column.imgA.src = "img/pipe_up.png";
+            column.imgB.src = "img/pipe_down.png";
+
+            column.id = new Date().getTime();
+            columnArr.push(column);
+        },1500)
+    }
+    createColumn();
+
+    var same = null;
+    var mark = 0;
+    //绘画柱子
+    function drawColumn(){
+        for(var i = 0; i < columnArr.length; i++){
+            columnArr[i].positionX--;
+            context.drawImage(columnArr[i].imgA, columnArr[i].positionX,columnArr[i].positionY);
+            context.drawImage(columnArr[i].imgB, columnArr[i].positionX, columnArr[i].positionY + 420);
+            if(birdX + 40 >= columnArr[i].positionX && birdX - 70 <= columnArr[i].positionX){
+            //    加分
+                if(columnArr[i].id !== same){
+                    mark ++;
+                    same = columnArr[i].id;
+
+                    document.getElementById("mark").innerHTML = "得分：" + mark;
+                }
+
+
+            //    判断碰撞
+                if(birdY < columnArr[i].positionY + 250 || birdY + 48 > columnArr[i].positionY + 420){
+
+                    clearInterval(columnTimer);
+                    clearInterval(birdTimer);
+
+                    var oRes = document.getElementById("res");
+                    oRes.style.display = "block";
+
+                    oRes.children[0].innerHTML = "得分" + mark;
+
+                    var aa = document.createElement("img");
+
+                    //    奖牌
+                    if(mark > 0 || mark <= 10){
+                    //    铜牌
+                        aa.src = "img/medals_3.png";
+                        oRes.appendChild(aa);
+
+                    }
+                    else if(mark > 10 || mark <= 50){
+                        //    银牌
+                        aa.src = "img/medals_2.png";
+                        oRes.appendChild(aa);
+                    }
+                    else if(mark > 50 || mark <= 100){
+                        //    金牌
+                        aa.src = "img/medals_1.png";
+                        oRes.appendChild(aa);
+                    }
+                    else{
+                        //    白金牌
+                        aa.src = "img/medals_0.png";
+                        oRes.appendChild(aa);
+                    }
+
+                    setTimeout(function (){
+                        oRes.innerHTML = "<p>游戏即将重新开始,请做好准备</p>";
+                        setTimeout(function (){
+                            location.reload();
+                        },3000)
+                    },3000)
+
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

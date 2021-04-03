@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style type="text/css">
+        #test{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id = "test">
+        aaa
+    </div>
+    <form action="">
+        <input type="text">
+        <input type="submit" value = "提交">
+    </form>
+    <script type="text/javascript">
+        var oDiv = document.getElementById("test");
+        var oForm = document.getElementsByTagName("form")[0];
+        var aInput = document.getElementsByTagName("input");
+     /*   oDiv.onclick = function(){
+            alert(this.innerText);
+       }
+       //onclick 事件会在元素被点击时发生。
+        */
+        
+        
+        
+   /*     oDiv.onmouseover = function(){
+            alert(this.innerText);
+        }
+        
+        //鼠标悬停开始事件
+        */
+        
+        
+   /*     
+        oDiv.onmousedown = function(){
+            alert("mousedown");
+            //当鼠标指针移动到元素上方，并按下鼠标左键时，会发生 mousedown 事件。
+        }
+        */
+        
+      /*  
+        oDiv.onmouseup = function(){
+            alert("mouseup");
+            //当在元素上放松鼠标按钮时，会发生 mouseup 事件。
+        }
+        */
+        
+        
+     /*   
+        oForm.onsubmit = function(){
+            console.log("submit");
+            return false;
+        }
+        */
+        
+     /*   
+        aInput[0].onfocus = function(){
+            console.log("onfocus");
+            //onfocus 事件在对象获得焦点时发生。
+        }
+        */
+        
+        
+       /* 
+        aInput[0].onblur = function(){
+            console.log("onblur");
+            //onblur 事件会在对象失去焦点时发生。
+        }
+        */
+        
+   /*     
+        aInput[0].onchange = function(){
+            console.log("change");
+            //onchange 事件会在域的内容改变时发生。
+}
+        */
+        
+    /*    
+        aInput[0].oninput = function(){
+            console.log("oninput");
+            //oninput 事件在用户输入时触发。该事件在 <input> 或 <textarea> 元素的值发生改变时触发
+
+        }
+        */
+    </script>
+</body>
+</html>

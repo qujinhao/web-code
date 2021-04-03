@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+        assign()    跳转到指定页面
+        
+        reload()    重载当前的url
+        如果传参，参数为true，的时候，强制加载，从服务器源头重新加载
+        
+        
+        replace  用新的url替换当前页面
+        */
+        window.onload = function(){
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function(){
+               // location.assign("http://www.baidu.com");
+                //location.reload(true);
+                location.replace("http://www.baidu.com");//相当于无痕浏览，没有后退键
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="按钮" id="btn"/>
+</body>
+</html>

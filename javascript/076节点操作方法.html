@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            replaceChild()
+            【格式】parent.replaceChild(newNode, oldNode);
+            功能：用newNode将oldNode给替换掉
+            
+            
+      
+      cloneNode()
+            【格式】克隆节点
+            返回值：新克隆出来的节点
+            参数：true  默认是false   如果传true,就会复制元素节点中的innerHTML
+            
+            
+            
+            
+            
+            removeChild()
+            【格式】node.parentNode.removeChild(node);
+            功能：删除节点
+        */
+        window.onload = function(){
+            
+      /*      
+            var oDiv = document.getElementById("div1");
+            var node = document.createElement("strong");
+            
+            oDiv.parentNode.replaceChild(node, oDiv);
+            */
+            
+       /*     
+            var oDiv = document.getElementById("div1");
+            var oSpan = document.getElementsByTagName("span")[0];
+            
+            //克隆div
+            var node = oDiv.cloneNode(true);
+            
+            //将div添加到span前面
+            oSpan.parentNode.insertBefore(node, oSpan);
+            */
+            
+            var oDiv = document.getElementById("div1");
+            oDiv.parentNode.removeChild(oDiv);
+        }
+    </script>
+</head>
+
+<body>
+    <span>sapn</span>
+    <div id = "div1">div</div>
+    <p>p</p>
+</body>
+</html>

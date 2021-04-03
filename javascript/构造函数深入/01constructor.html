@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //person
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+           
+        }
+        
+        
+        Person.prototype.sayHello = function(){
+             alert(this.name);
+        }
+        
+        /*
+            1.创建一个对象
+            2.this指针指向了这个对象
+            3.执行构造函数内的代码
+            4.将构造函数返回
+        */
+        var p = new Person(); 
+        
+        
+        
+        
+        function Student(name, age, id){
+            Person.apply(this, [name, age]); //继承构造函数
+            //Person.call(this, name, age);  //继承构造函数
+            this.study = function(){
+            alert(this.id + 'is learning!!!');
+}
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

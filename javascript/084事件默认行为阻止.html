@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <a href="">test</a>
+    <form >
+        <input type="text" >
+        <input type="submit" value="提交">
+    </form>
+    
+    <script type="text/javascript">
+        var oLink = document.getElementsByTagName("a")[0];
+        var oForm = document.getElementsByTagName("form")[0];
+        var aInput = document.getElementsByTagName("input");
+         oLink.onclick = function(e){
+            
+             
+             //默认行为阻止
+             //return false;
+             
+             //evt.preventDefault();
+             
+             //evt.returnValue = false;
+             
+             var evt = e || event;
+             console.log("aaa");
+             evt.returnValue = false;
+        }
+         
+         //阻止提交
+         oForm.onsubmit = function(){
+              console.log("aaa");
+             return false;
+         }
+         
+        //阻止文本输入 
+         aInput[0].onkeydown = function(){
+             return false;
+         }
+         
+         //阻止默认菜单
+         document.oncontextmenu =function(){
+             return false;
+         }
+    </script>
+</body>
+</html>

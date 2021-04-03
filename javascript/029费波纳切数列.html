@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            一月兔     二月兔     三月兔     成熟兔
+            
+        费波纳且数列
+        */
+        //rabbit(4) = rabbit(1) + rabbit(3);
+        function rabbit(month){
+            if(month < 4){
+                return 1;
+            }
+            return rabbit(month - 3) + rabbit(month - 1);
+        }
+        
+        alert(rabbit(10));
+    </script>
+</head>
+
+<body>
+</body>
+</html>

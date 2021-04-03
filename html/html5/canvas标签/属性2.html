@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+Canvas - 渐变
+渐变可以填充在矩形, 圆形, 线条, 文本等等, 各种形状可以自己定义不同的颜色。
+以下有两种不同的方式来设置Canvas渐变：
+createLinearGradient(x,y,x1,y1) - 创建线条渐变
+createRadialGradient(x,y,r,x1,y1,r1) - 创建一个径向/圆渐变
+当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+使用渐变，设置fillStyle或strokeStyle的值为 渐变，然后绘制形状，如矩形，文本，或一条线。
+使用 createLinearGradient():
+
+
+
+Canvas - 图像
+把一幅图像放置到画布上, 使用以下方法:
+drawImage(image,x,y)
+-->
+<body>
+<img id="scream" src="../img/1.png" alt="The Scream" width="220" height="277"><p>Canvas:</p>
+<canvas id="myCanvas" width="500" height="300" style="border:1px solid #c3c3c3;">
+    您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+
+<script>
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+
+    //矩形
+    // 创建渐变
+    //var grd=ctx.createLinearGradient(0,0,200,0);  //渐变的线条
+    // grd.addColorStop(0,"red");
+    // grd.addColorStop(1,"white");
+    //
+    // // 填充渐变
+    // ctx.fillStyle=grd;
+    // ctx.fillRect(10,10,150,80); //10,10两个参数代表渐变开始的位置  150，80代表渐变矩形的长和宽
+
+
+//    圆
+//     var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+//     grd.addColorStop(0,"red");
+//     grd.addColorStop(1,"white");
+//
+//     // 填充渐变
+//     ctx.fillStyle=grd;
+//     ctx.fillRect(10,10,150,80);
+
+
+
+//图像放置画中
+    var img=document.getElementById("scream");
+    ctx.drawImage(img,10,10);
+
+    img.onload = function() {
+        ctx.drawImage(img,10,10);
+    }
+</script>
+</body>
+</html>

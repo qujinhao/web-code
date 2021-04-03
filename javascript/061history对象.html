@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            history 是window对象的属性，它保存这个用户上网记录
+            
+            属性
+            history.length  返回当前history对象中的记录数
+            历史记录数
+            
+            
+            
+            方法
+            history.back()  返回上一条历史记录，类似于后退
+            history.forward()   前进到下一条历史记录，类型前进
+            history.go() 
+            参数：0   重载当前页面
+                 正数  前进对应数量的记录
+                 负数 后退对应数量的记录
+        */
+        
+      window.onload = function(){
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function(){
+                alert(history.length);
+            }
+        
+        var oForward = document.getElementById("forward");
+          oForward.onclick = function(){
+              history.forward();
+          }
+          
+          
+         var oBack = document.getElementById("back");
+          oBack.onclick = function(){
+              history.back();
+          }
+          
+          
+        var oGo = document.getElementById("go");
+        oGo.onclick = function(){
+            //history.go(0);
+            //history.go(2);
+            history.go(-2);
+        }
+        
+      }
+        
+    </script>
+</head>
+
+<body>
+    <input type="button" value="记录" id="btn"/>
+    <input type="button" value="前进" id="forward"/>
+    <input type="button" value="后退" id="back"/>
+    <input type="button" value="go" id="go"/>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+# Project exclude paths
+/Graphql/node_modules/
+/nodejs/installStation/node_modules/
+/nodejs/node_modules/

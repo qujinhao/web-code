@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript" src="tool.js"></script>
+    <script type="text/javascript">
+            /*
+                insertBefore()
+                [格式]父节点.insertBefore(插入节点， 旧节点)
+                功能：将插入发节点插入到旧节点之前
+            */
+        window.onload = function(){
+            //创建一个<strong>将这个节点插入到span节点之前
+            
+            
+            //创建strong
+            var node = createElementWidthTxt("strong", "strong文本");
+            
+            var oSpan = document.getElementsByTagName("span")[0];
+            
+            
+            //进行插入
+            //oSpan.parentNode.insertBefore(node, oSpan);
+            
+            
+            insertAfter(node, oSpan);
+            
+            
+        }
+        
+        
+        
+        //DOM里insertAfter（）这个方法是没有的
+        
+        function insertAfter(newNode, oldNode){
+            //判断oldNode是否是最后一个
+            var parent = oldNode.parentNode;
+            if(oldNode == parent.lastChild){
+                //插入到oldnode的下一个节点
+                parent.appendChild(newNode);
+            }else{
+                //插入到下一个节点之前
+                parent.insertBefore(newNode, oldNode.nextSibling);
+            }
+        }
+    </script>
+    
+    
+</head>
+
+<body>
+    <div id = "div1">
+        <p></p>
+        <span></span>
+        <em></em>
+    </div>
+</body>
+</html>

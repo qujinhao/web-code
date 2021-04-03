@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <style type="text/css">
+        #test{
+            width: 200px;
+            height: 200px;
+            background: blue;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id = "test">
+        aaa
+    </div>
+    <script type="text/javascript">
+        var oDiv = document.getElementById("test");
+        oDiv.onclick = function(e){
+           // console.log(e);
+           // console.log(window.event);
+            var evt = e || event;
+            console.log(evt);
+        }
+    </script>
+</body>
+</html>

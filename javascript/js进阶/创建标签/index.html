@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <p>111</p>
+        <p>222</p></div>
+<script>
+
+    var div = document.getElementById("box");
+    //创建元素节点
+    var a = document.createElement("p");
+    a.innerHTML = "大头宝贝";
+    a.style.backgroundColor = "red";
+    console.log(a);
+
+    //放置节点(放置在最后)
+    // div.appendChild(a);
+
+//    放置在倒数第二个
+    div.insertBefore(a, div.lastChild);
+
+//    复制节点
+    var newDiv = div.cloneNode(true);
+    console.log(newDiv);
+
+//    删除节点
+    div.removeChild(div.lastChild);
+
+
+    var input = document.createElement("input");
+    input.setAttribute("type","text");
+    input.setAttribute("placeholder","good");
+
+    document.getElementById("box").appendChild(input);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    
+<style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .slider{
+            width: 270px;
+            height: 290px;
+            border: 5px solid crimson;
+            position: relative;
+        }
+        .slider .list .item{
+            position: absolute;
+            left: 0;
+            top:0;
+            opacity: 0;  /*透明度设为0*/
+        }
+        
+        
+        .slider .list .item:first-of-type{
+            opacity: 1;
+        }
+        .slider .list .item img{
+            width: 270px;
+            height: 290px;
+            display: block;
+        }
+        .slider .next, .slider .prev{
+            position: absolute;
+            top:150px;
+        }
+        .slider .next{
+            right: 0;
+        }
+        
+        .slider .pagination{
+            position: relative;
+            top: 300px;
+        }
+        .slider .pagination .bullet{
+            width:20px;
+            height: 20px;
+            background: black;
+            margin-left: 5px;
+            float: left;
+            border: 2px solid yellow;
+            cursor: pointer;/*光标变成手*/ 
+            line-height: 20px;
+            color: white;
+            text-align: center;
+        }
+        .slider .pagination .bullet.focus{
+            background: hotpink;
+            
+        }
+    </style>
+    <script type="text/javascript" src="../project01/01move/animation.js"></script>
+</head>
+
+<body>
+    <div class="slider">
+        <ul class="list">
+            <li class="item"><img src="../../../img/1.jpg" alt=""></li>
+            <li class="item"><img src="../../../img/2.jpg" alt=""></li>
+            <li class="item"><img src="../../../img/3.jpg" alt=""></li>
+        </ul>
+        <button class="prev">prev</button>
+        <button class="next">next</button>
+        <ul class="pagination">
+            <li class="bullet focus">1</li>
+            <li class="bullet">2</li>
+            <li class="bullet">3</li>
+        </ul>
+    </div>
+    
+    
+    
+    <script type="text/javascript">
+        (function(){  //封装函数，后加（）表示立即执行
+            var prevIndex, nextIndex;  //定义变量，表示上下页
+            var len;
+            var id;
+            init();   //调用播放函数
+            
+            function init(){
+                prevIndex = nextIndex = 0;
+                len = document.querySelectorAll('.list .item').length;  //获取到list中的数组长度
+                
+                
+                document.querySelector('.prev').onclick = function(){ //当上一页被点击时执行函数
+                    slidePrev(); //执行上一页函数
+                }
+                
+                
+                document.querySelector('.next').onclick = function(){  //当下一页被点击时执行函数
+                    sliderNext(); //执行下一页函数
+                }
+                
+                var bullets = document.querySelectorAll('.slider .pagination .bullet');  //获取到bullet的元素
+                for(var i = 0; i < bullets.length; i++){
+                    bullets[i].index = i;
+                    bullets[i].onclick = function(){  //当bullet中的元素被点击时
+                        prevIndex = nextIndex;  //上一页就等于下一页
+                        nextIndex = this.index; //下一页就等于这一页的页数
+                        slidTo(prevIndex,nextIndex);  //调用函数
+                    }
+                }
+               var slider = document.querySelector('.slider');
+                slider.onmouseover = function(){  //增加光标移动事件监听
+                    stop();  //停止自动播放
+                }
+                slider.onmouseout = function(){  //增加
+                    auto();  //进行自动播放
+                }
+                
+                
+                auto();
+            }
+            
+            
+            //返回上一页函数
+            function slidePrev(){
+                prevIndex = nextIndex; //上一页值等于下一页
+                nextIndex--;  //下一页自减
+                if(nextIndex === -1){  //当下一页的值为-1时
+                    nextIndex = len - 1;  //下一页的值就改变为list中的数组长度-1（重新开始循环）
+                    
+                }
+                slidTo(prevIndex, nextIndex);  //调用播放函数
+            }
+            
+            
+            
+            
+            //下一页函数
+            function sliderNext(){
+                prevIndex = nextIndex;  //上一页值等于下一页
+                nextIndex++;  //下一页自增
+                if(nextIndex === len){  //当下一页的值为数组长度时（证明需重新开始）
+                    nextIndex = 0;  //下一页的值为0
+                    
+                }
+                slidTo(prevIndex, nextIndex);  //调用播放函数
+            }
+            
+            
+            
+            
+            function slidTo(prev, next){  //播放函数
+                
+                var bullets = document.querySelectorAll('.slider .pagination .bullet');//获取bullets中的元素
+                
+                var list = document.querySelectorAll('.list .item');  //获取item中的元素
+                bullets[prev].className = 'bullet'; //将bullet元素的class名字改成bullet
+                bullets[next].className = 'bullet focus';  //将bullet元素的class名字改成bullet focus
+                
+                animate(list[prev],{opacity:0}); //调用透明度函数，显示透明
+                animate(list[next],{opacity:100});  //显示正常
+            }
+        
+            //自动播放
+            function auto(){
+                clearInterval(id);
+                id = setInterval(function(){
+                    sliderNext();
+                },2000)
+            }
+            
+            //停止自动播放
+            function stop(){
+                clearInterval(id);
+            }
+        })()
+    </script>
+</body>
+</html>

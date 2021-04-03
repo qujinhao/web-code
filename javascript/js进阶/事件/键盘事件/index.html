@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    var lis = document.getElementsByTagName("li");
+
+    //键盘按下
+    document.addEventListener("keydown", function (e){
+        //浏览器兼容
+        var event = e || window.event;
+        console.log(event.altKey, event.ctrlKey, event.shiftKey, event.key,event.keyCode);
+    },false)
+
+    //键盘抬起
+    document.addEventListener("keyup", function (e){
+        //浏览器兼容
+        var event = e || window.event;
+        console.log(event.altKey, event.ctrlKey, event.shiftKey, event.key,event.keyCode);
+    },false)
+
+    //按非功能按键触发
+    document.addEventListener("keypress", function (e){
+        //浏览器兼容
+        var event = e || window.event;
+        console.log(event.altKey, event.ctrlKey, event.shiftKey, event.key,event.keyCode);
+    },false)
+</script>
+</body>
+</html>

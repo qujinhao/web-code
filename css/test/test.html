@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div:nth-of-type(1){
+        width: 300px ;
+        height: 400px;
+        margin: 100px auto;
+        transform-style: preserve-3d;
+        perspective: 1200px;
+        animation: aa 2s linear 0.5s infinite alternate;
+    }
+    img:nth-child(1){
+        border-radius: 50%;
+        transition: all 2s;
+        opacity: 0;
+    }
+    img:nth-child(1):hover{
+        transform: rotateZ(360deg);
+
+    }
+    @keyframes aa {
+        0%  {left: 0;top: 0; transform: scale(2); }
+        25%  {left: 200px;top: 0 ;transform: scale(1);}
+        50%  {left: 200px;top:200px;transform: scale(2);}
+        75%   {left: 0; top: 200px;transform: scale(2)}
+        100%   {left: 0; top:0;transform: scale(1)}
+    }
+</style>
+<body>
+<div>
+<img src="../img/img.png" alt="" id="img1" onclick="playGame()">
+    <audio src="../audio/恐怖.mp3" type="audio/mpeg" id="Au"></audio>
+</div>
+<script>
+    var Au = document.getElementById("Au");
+    var img1 = document.getElementById("img1");
+    function playGame(){
+        img1.style["opacity"] = "1";
+        Au.play();
+    }
+</script>
+</body>
+</html>

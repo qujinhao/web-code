@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: #ff9999;
+        margin: 100px auto;
+        transition: all 1.5s;
+
+    }
+    .box:hover{
+        transform:rotate(30deg);
+    }
+    .box2{
+        width: 100px;
+        height: 100px;
+        background: #0f0;
+        margin: 200px auto;
+        transform-origin: left top;
+        transition: all 1s;
+    }
+    .box2:hover{
+        transform: rotate(-30deg);
+    }
+</style>
+<body>
+<div class="box"></div>
+<div class="box2"></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        function add (num1, num2){
+            return num1 + num2;
+        }
+        
+        /*
+            [注]希望能够再函数外部获取到函数调用结果
+            【注】return后面所跟表达式的值，就是当前函数调用的值
+            [注]函数执行到return语句后，就执行结束，跟在return后面其他的语句执行不到
+        */
+            var result  = add(3, 4);
+    alert(result);  
+        
+    </script>
+</head>
+
+<body>
+</body>
+</html>

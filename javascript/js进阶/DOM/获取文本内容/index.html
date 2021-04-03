@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+
+        我是一个大头宝贝
+    </div>
+    <script type="text/javascript">
+
+        var jsDiv = document.getElementById("box");
+        //元素节点.innerHTML
+        //获取对象开始标签到结束标签的全部内容
+        console.log(jsDiv.innerHTML);
+
+
+    //   元素节点.outerHTML
+    //    除了包含innerHTML的全部内容，还包括对象标签本身
+        console.log(jsDiv.outerHTML);
+
+
+    //   元素节点.innerText
+        //获取对象开始标签到结束标签的文本内容 （不包括换行）
+        console.log((jsDiv.innerText));
+
+
+        jsDiv.innerHTML = "<h1>最爱大头宝贝了</h1>";
+    </script>
+</body>
+</html>

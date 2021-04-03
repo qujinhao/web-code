@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="test.css"/>
+<body>
+    <div id="box"></div>
+    <button onclick="changeColor()">换颜色</button>
+
+
+    <script type="text/javascript">
+
+    // 设置样式属性值————元素节点.style.样式属性名 = 样式属性值
+
+    // 获取样式属性值 统一使用getComputedStyle---   元素节点.style.样式属性 = 值
+
+        var jsDiv = document.getElementById("box");
+        function changeColor(){
+            var c = window.getComputedStyle(jsDiv,null).backgroundColor;
+            console.log(c);
+        }
+    </script>
+</body>
+</html>

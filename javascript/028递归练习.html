@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+    <script type="text/javascript">
+        /*
+            通过递归，打印n个hello world
+        */
+        
+    function print(n){
+        if(n == 0){
+            return;
+        }
+         document.write("hello world" + "</br>");
+        return print(n-1);
+    }
+        alert(print(10));
+    </script>
+</head>
+
+<body>
+</body>
+</html>

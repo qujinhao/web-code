@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+    <button>first Blood</button>
+    <button>double Kill</button>
+    <script src="Hero.js"></script>
+    <script src="Message.js"></script>
+    <script>
+        //王者荣耀---游戏战报(类型群发)
+        var msg = new Message();
+        var hz = new Hero('黄忠', msg);
+        var lb = new Hero('卢布', msg);
+        var zy = new Hero('周瑜', msg);
+        var gy = new Hero('关羽', msg);
+        msg.attach(gy);
+        msg.attach(hz);
+        msg.attach(lb);
+        msg.attach(zy);
+        document.querySelector('button:first-of-type').onclick = function(){
+            msg.setState('first blood');
+        }
+        document.querySelector('button:last-of-type').onclick = function(){
+            msg.setState('double kill');
+        }
+    </script>
+</body>
+</html>
