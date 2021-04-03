@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+    <style>
+        .class1{
+            background: #444;
+            color: #eee;
+        }
+    </style>
+<body>
+<div id="app">
+    <label for="r1">修改颜色</label><input type="checkbox" v-model="use" id="r1">
+    <br><br>
+<!--    判断 use 的值，如果为 true 使用 class1 类的样式，否则不使用该类-->
+    <div v-bind:class="{'class1': use}">
+        v-bind:class 指令
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            use: false
+            // use:true
+        }
+    });
+</script>
+</body>
+</html>
