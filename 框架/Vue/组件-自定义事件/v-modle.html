@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <runoob-input v-model="num"></runoob-input>
+    <p>输入的数字为:{{num}}</p>
+</div>
+<script>
+    Vue.component('runoob-input', {
+        template: `<p> <input
+            ref="input"
+            :value="value"
+            @input="$emit('input', $event.target.value)"
+        > </p> `,
+    props: ['value'], // 名为 value 的 prop
+})
+
+new Vue({
+    el: '#app',
+    data: {
+        num: 100,
+    },
+
+})
+</script>
+</body>
+</html>

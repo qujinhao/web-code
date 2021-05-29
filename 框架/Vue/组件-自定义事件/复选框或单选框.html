@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <base-checkbox v-model="lovingVue"></base-checkbox>
+    <div v-show="lovingVue">
+        如果选择框打勾我就会显示。
+    </div>
+</div>
+<script>
+    // 注册
+    Vue.component('base-checkbox', {
+        model: {
+            prop: 'checked',
+            event: 'change'  // onchange 事件
+        },
+        props: {
+            checked: Boolean
+        },
+
+        template: `
+    <input
+      type="checkbox"
+      v-bind:checked="checked"
+      v-on:change="$emit('change', $event.target.checked)"
+    >
+  `
+    })
+    // 创建根实例
+    new Vue({
+        el: '#app',
+        data: {
+            lovingVue: true
+        }
+    })
+</script>
+</body>
+</html>

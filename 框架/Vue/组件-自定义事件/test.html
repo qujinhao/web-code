@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <qjh v-model="num"></qjh>
+    <p  v-on:change="pp(num)">图片：{{num}}</p>
+    <img src="" id='pic'>
+</div>
+
+<script>
+    Vue.component('qjh',{
+        template:`<p><input
+                rel='input'
+                :value="value"
+                @input="$emit('input', $event.target.value)"
+            ></p>`,
+
+        props:['value']
+    })
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            num:0
+        },
+    })
+
+    // vm.$watch('num',function (nval, oval){
+    //     var pic = document.getElementById('pic');
+    //     pic.src = 'img/' + nval + '.jpg';
+    // })
+
+
+
+</script>
+</body>
+</html>

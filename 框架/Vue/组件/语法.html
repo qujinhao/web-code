@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+<hello></hello>
+    <hellobox></hellobox>
+</div>
+<div id="box2">
+    <hello></hello>
+</div>
+<script>
+//    全局组件
+    Vue.component('hello',{
+        template:`<div>
+            我是hello组件
+</div>`
+    })
+    var vm = new Vue({
+        el:'#box',
+        data:{
+
+        },
+        //局部组件
+        components:{
+            'hellobox':{
+                template:`
+                <div>我是box下的独有组件{{name}}
+                <ul>
+                  <li v-for="data in datalist">
+                    {{data}}
+                  </li>
+                </ul>
+                <hellochild></hellochild>
+                </div>
+                `,
+                data:function (){
+                    return {
+                        name:'qjh',
+                        datalist:['111','222','333']
+                    }
+                },
+                components:{
+                    'hellochild':{
+                        template:`<div>我是hellochild的子组件</div>`
+
+                    }
+                },
+                methods:{
+
+                }
+            }
+
+        }
+    })
+    var vm2 = new Vue({
+        el:'#box2',
+        data:{
+
+        }
+    })
+</script>
+</body>
+</html>

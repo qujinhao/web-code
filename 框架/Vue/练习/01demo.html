@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 1demo</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+    <div id="app">
+        {{message}}
+        <br>
+        {{messageReverse}}<br>
+        <input type="text" v-model="message" v-on:click="changeBgColor" v-bind:title="message"/>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data:{
+                message: 'XiBaGui'
+            },
+            computed:{
+                messageReverse: function (){
+                    return this.message.split('').reverse().join('')
+                }
+            },
+            methods:{
+                changeBgColor:function (ev){
+                    ev.target.style.background = 'red'
+                }
+            },
+            mounted: function (){
+                console.log(123)
+            },
+            updated:function () {
+                console.log(456)
+            },
+            watch:{
+                message: function (news,olds){
+                    console.log(news)
+                    console.log(olds)
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

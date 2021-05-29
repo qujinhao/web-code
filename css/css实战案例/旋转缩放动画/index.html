@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+/*
+    子元素要根据父元素去定位，父元素需要设置相对定位，定位时谁在下边显示谁在上边显示，我们可以利用
+    z-index值去改变显示顺序问题，z-index的值越大越在上边显示，css3中transform属性中的缩放及选择属性
+    用空格隔开
+*/
+
+     *{margin: 0; padding: 0;}
+        div{width: 300px; height: 300px;  border-radius: 50%; margin: 0 auto; position: relative;}
+        p{width: 260px; height: 260px; background: url(img/3.jpeg); border-radius: 50%; border: 20px solid rgba(255,255,255,0.5); background-origin: border-box; position: absolute; z-index: 1; transition: 1s;}
+        h1 {
+            width: 300px;
+            height: 300px;
+            background: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            transform: scale(0,0) rotate(0deg);
+            transition: 1s;
+        }
+        div:hover p{
+            transform: scale(0,0) rotate(360deg);
+        }
+        div:hover h1{
+            transform: scale(1,1) rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p></p>
+        <h1>文字</h1>
+    </div>
+</body>
+</html>

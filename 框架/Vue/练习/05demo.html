@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5demo</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <table>
+        <tr is="my-header" @click.native="show"></tr>
+    </table>
+
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        components:{
+            'my-header':{
+                template:'<h2>hello myheader!!!</h2>',
+            }
+        },
+        methods:{
+            show:function (){
+                console.log(123)
+            }
+        }
+    })
+</script>
+</body>
+</html>

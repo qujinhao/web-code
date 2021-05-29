@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 500px;
+            background-repeat: no-repeat;
+        /*    添加背景*/
+            background-image: url(../img/dd.jpeg);
+        /*    设置背景图片的大小 宽度/高度   宽度/auto（保持比例自动缩放）
+                建议：在使用这个属性之前确定宽高比与容器的宽高比是否一致，否则
+                图片变形
+
+                设置百分比，是参照父容器可放置内容区域的百分比
+        */
+            /*background-size:300px auto;*/
+
+            /*
+            设置contain：按比例调整图片大小啊，使用图片宽高适应整个元素的背景区域
+            使图片全部包含在容器内
+            1.图片大于容器：有可能造成容器的空白区域，将图片缩小
+            2.图片小于容器:有可能造成容器的空白区域，将图片放大
+            */
+            /*background-size: contain;*/
+
+
+
+        /*    cover:与contain正好相反  背景图片按比例缩放，自适应整个区域
+        如果背景区域不足以包含所有背景图片，图片内容会溢出
+            1.图片大于容器：等比例缩小，会填满整个背景区域，有可能造成某些区域不可见
+            2.图片小于容器:等比例放大，会填满整个背景区域，有可能造成某些方向上的不可见
+        */
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

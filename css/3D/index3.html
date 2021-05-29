@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-left: 200px;
+            margin-top: 10px;
+        /*
+        添加过渡
+        */
+            transition:transform 2s;
+        }
+        div:nth-of-type(1):active{
+            /*  添加三维移动---3D
+            translate3d(x方向的偏移，y方向的偏移，z的方向的偏移)
+            */
+            transform: translate3d(0px,0px,400px);
+        }
+    /*    3维缩放
+    x方向的缩放，y方向的缩放，z的方向的缩放
+    */
+        div:nth-of-type(2):hover{
+            transform: scale3d(1,10,1);
+        }
+
+        div:nth-of-type(3):hover{
+            /*
+             3D旋转
+             x：代表x轴方向上的一个向量值
+             y:代表y轴方向上的一个向量值
+             z：代表z轴方向上的一个向量值a
+    */
+            transform: rotate3d(100,0,0,30deg);
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

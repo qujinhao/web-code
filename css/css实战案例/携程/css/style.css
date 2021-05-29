@@ -1,0 +1,452 @@
+/*==================res==========================*/
+body,h1,h2,h3,h4,h5,h6,p,a,img,input,ul, li,ol,dl,dt,dd,figure,figcaption{
+    margin: 0;
+    padding: 0;
+}
+ul ,li{
+    list-style: none;
+}
+img{
+    display: block;
+    border: 0;
+}
+input{
+    outline: none;
+}
+body{
+    font-size: 12px;
+    font-family: "微软雅黑", serif;
+    color: #3e3e3e;
+    background: #f2f2f2;
+}
+a{
+    text-decoration: none;
+}
+header,nav,section,footer,aside,article,main,figure,figcaption{
+    display: block;
+}
+*{
+    box-sizing: border-box;
+
+}
+
+/*==========bar========*/
+#bar{
+    width: 100%;
+    height: 45px;
+    border-top:1px solid #cbcbcb;
+    border-bottom: 1px solid #cbcbcb;
+    background: #f6f6f6f6;
+    position: fixed;
+    top:0;
+    display: flex;
+    z-index: 999;
+}
+#bar input{
+    height: 26px;
+    border: 1px solid #989898;
+    border-radius: 4px;
+    flex: 1;
+    margin-top: 7px;
+    margin-left: 8px;
+    background: white;
+    box-shadow: 0 4px 4px,rgba(51,51,51,0.1);
+    padding-left: 25px;
+    color: #636363;
+    background: url(../img/search.png) no-repeat;
+    background-size: 26px auto;
+}
+#bar .my{
+    width: 50px;
+    height: 43px;
+    padding-top: 26px;
+    text-align: center;
+    position: relative;
+}
+#bar .my::after{
+    content: "";
+    position: absolute;
+    top:3px;
+    left: 25%;
+    width: 23px;
+    height: 23px;
+    background: url(../img/my.png) no-repeat;
+    background-size: 23px auto;
+}
+
+
+/*============header===============*/
+header{
+    min-height: 64px;
+    margin-top: 45px;
+
+}
+header img{
+    width: 100%;
+    height: 90px;
+}
+
+
+/*==========nav===============*/
+nav{
+    padding: 4px;
+    height: 380px;
+}
+nav ul{
+    width: 100%;
+    height: 90px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    display: flex;  /*弹性盒*/
+
+}
+
+nav ul:nth-child(1){
+    background: #ff697a;
+}
+
+nav ul:nth-child(2){
+    background: #3d99fe;
+}
+
+nav ul:nth-child(3){
+    background: #44c522;
+}
+
+nav ul:nth-child(4){
+    background: #fc9721;
+}
+
+nav ul li{
+    flex: 1;
+    display: flex;
+    flex-direction: column;/*改变主轴方向*/
+}
+
+nav ul li:nth-child(1),nav ul li:nth-child(2){
+    border-right: 1px solid #fff;
+}
+nav ul:nth-child(1) li:first-child a:after{
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 40px;
+    width: 44px;
+    height: 44px;
+    background: url(../img/hotel.png) no-repeat;
+    background-size: 36px auto;
+}
+
+nav ul:nth-child(2) li:first-child a:after{
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 40px;
+    width: 44px;
+    height: 44px;
+    background: url(../img/plane.png) no-repeat;
+    background-size: 36px auto;
+}
+
+nav ul:nth-child(3) li:first-child a:after{
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 40px;
+    width: 44px;
+    height: 44px;
+    background: url(../img/travel.png) no-repeat;
+    background-size: 36px auto;
+}
+
+nav ul li a{
+    width: 100%;
+    flex: 1;  /* flex等于1表示内容平分*/
+    line-height: 45px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+nav ul li a:nth-child(1){
+    border-bottom: 1px solid #fff;
+}
+
+nav ul li:nth-child(1) a:nth-child(1){
+    border-bottom: 0;
+}
+
+nav ul:last-child li:nth-child(1) a:nth-child(1){
+    border-bottom: 1px solid #fff;
+}
+
+
+/*==============subnav================*/
+#subnav{
+    padding: 4px;
+    height: 190px;
+}
+
+#subnav ul{
+    display: flex;
+    /*允许换行*/
+    flex-wrap: wrap ;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#subnav ul li{
+    width: 25%;
+    height: 33.33%;
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #3e3e3e;
+    text-align: center;
+    padding-top: 38px;
+    background: #fff;
+    position: relative;
+}
+
+#subnav ul li:nth-child(4n){
+    border-right: 0;
+}
+
+#subnav ul li:nth-child(9),#subnav ul li:nth-child(10),
+#subnav ul li:nth-child(11)#subnav ul li:nth-child(12){
+    border-bottom: 0;
+}
+
+#subnav ul li::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top:11px;
+    left:50%;
+    margin-left: -10px;
+}
+
+#subnav ul li:nth-child(1)::after{
+    background: url(../img/freego.png);
+    background-size: 20px auto;
+}
+
+#subnav ul li:nth-child(2)::after{
+    background: url(../img/guide.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(3)::after{
+    background: url(../img/oneDay.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(4)::after{
+    background: url(../img/high-end.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(5)::after{
+    background: url(../img/sence.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(6)::after{
+    background: url(../img/overseas.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(7)::after{
+    background: url(../img/Foreign_currency.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(8)::after{
+    background: url(../img/join_in.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(9)::after{
+    background: url(../img/luggage.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(10)::after{
+    background: url(../img/camel.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(11)::after{
+    background: url(../img/stop.png);
+    background-size: 20px auto;
+}
+#subnav ul li:nth-child(12)::after{
+    background: url(../img/more.png);
+    background-size: 20px auto;
+}
+
+
+/*================sales-tmh===========*/
+#sales-tmh{
+    height: 233px;
+    padding: 0 8px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+    background: #fff;
+}
+
+#sales-tmh h2{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sales-tmh h2::before{
+    content: "";
+    width: 75px;
+    height: 30px;
+    background: url(../img/11.png) no-repeat;
+    background-size: 79px auto;
+}
+
+#sales-tmh h2 span{
+    height: 20px;
+    line-height: 20px;
+    width: 102px;
+    background-image: linear-gradient(to right,#ff4e66,#fa6dc5);
+    border-radius: 10px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-width: 100;
+}
+
+#sales-tmh .con {
+    display: flex;
+    height: 175px;
+}
+
+#sales-tmh .con .left{
+    flex: 1;
+    margin-right: 4px;
+    background: #f9f9f9;
+}
+
+#sales-tmh .con .left dl{
+    height: 100%;
+    width: 100%;
+}
+
+#sales-tmh .con  .left dl dt img{
+    width: 100%;
+    height: 100px;
+}
+
+#sales-tmh .con  .left dl dd{
+    height: 42px;
+    line-height: 21px;
+    margin-top: 5px;
+}
+
+#sales-tmh .con .left dl dd p:nth-child(2){
+    font-size: 16px;
+    color: #fb4a5e;
+    font-weight: bold;
+}
+
+#sales-tmh .con .left dl dd p:nth-child(2) span{
+    color: #fff;
+    background: #f53c5b;
+    border-radius: 6px;
+    padding: 0 6px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+#sales-tmh .con .right{
+    flex: 1;
+
+}
+
+#sales-tmh .con .right .up{
+    height: 75px;
+    margin-bottom: 4px;
+    background: #f9f9f9;
+    padding: 8px;
+    position: relative;
+}
+
+#sales-tmh .con .right .up::after{
+    content: "";
+    position: absolute;
+    width: 54px;
+    height: 55px;
+    background: url(../img/red.jpeg);
+    background-size: 54px auto;
+    bottom: 0;
+    right: 0;
+}
+
+#sales-tmh .con .right .up h3{
+    color: #f83a54;
+}
+
+#sales-tmh .con .right .down{
+    height: 96px;
+    display: flex;
+}
+
+#sales-tmh .con .right .down .d-left{
+    flex: 1;
+    margin-right: 4px;
+    background: #f9f9f9 ;
+    padding: 8px;
+    position: relative;
+}
+
+#sales-tmh .con .right .down .d-left::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(../img/outsea.png);
+    background-size: 50px auto;
+    bottom: 8px;
+    left:50%;
+    margin-left: -25px;
+}
+
+#sales-tmh .con .right .down .d-left h3{
+    width: 60px;
+    color: #7aaeff;
+}
+
+#sales-tmh .con .right .down .d-left p span{
+    color: #7aaeff;
+}
+
+#sales-tmh .con .right .down .d-right{
+    flex: 1;
+    background: #f9f9f9;
+    padding: 8px;
+    position: relative;
+}
+
+
+#sales-tmh .con .right .down .d-right::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: url(../img/around.png);
+    background-size: 50px auto;
+    bottom: 8px;
+    left:50%;
+    margin-left: -25px;
+}
+
+#sales-tmh .con .right .down .d-right h3{
+    width: 60px;
+    color: #52c96b;
+}
+#sales-tmh .con .right .down .d-right p span{
+    color: #52c96b;
+}
+
+
+

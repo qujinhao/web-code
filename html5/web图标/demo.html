@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./font/iconfont.ttf?t=1621840199930') format('truetype');
+        }
+        .myFont{
+            font-family: "iconfont" ;
+            font-size: 100px;
+        }
+
+        /* 汉堡*/
+        .hamburger::before{
+            content: "\e648";
+            color: red;
+        }
+        .output::before{
+            content: "\e649";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--使用字体图标，得指定你想使用的图片-->
+<!--<span class="myFont">&#xe648;</span>-->
+<span class="myFont output"></span>
+<span class="myFont hamburger"></span>
+</body>
+</html>

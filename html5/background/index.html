@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            overflow: scroll;
+        /*    添加背景颜色*/
+            background-color: skyblue;
+        /*   添加背景图片
+            如果图片大于容器，那么就默认左上角放置
+            如果小于，图片默认平铺
+         */
+            /*background-image: url(../img/dd.jpeg);*/
+            background-image: url(../img/1.png);
+
+
+        /*   设置背景平铺
+        round:将图片进行缩放之后进行平铺
+        space:图片不会缩放，只是会在图片之间产生相同的间距
+        no-repeat：不平铺
+
+        */
+            /*background-repeat: no-repeat;*/
+
+
+        /*    设置在滚动容器的背景行为：跟随滚动/固定
+                fixed：背景图片的位置固定不变
+                scroll:当滚动容器的时候，背景图片跟随滚动
+
+
+
+                local和scroll的区别：前提是滚动当前容器的内容：
+                local:背景图片跟随内容一起滚动
+                scroll:背景图片不会跟随内容一起滚动
+        */
+            background-attachment: local;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p style="height: 800px"></p>
+    </div>
+    <span style=" height: 800px; display: block; "></span>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <hello name="qjh" :age="21" @event="handleParentclick"></hello>
+</div>
+<script>
+    var obj = {
+        template:`<div>我是{{name}},今年{{age}}岁
+            <button @click="handleclick">click</button>
+        </div>`,
+        // props:['name','age']
+        props:{
+            name:String,
+            age:Number
+        },
+        methods:{
+            handleclick(){
+                this.$emit('event','来自子组件的问候')
+            }
+        }
+    }
+    var vm = new Vue({
+        el:'#box',
+        data:{
+
+        },
+        components:{
+            hello:obj
+        },
+        methods:{
+            handleParentclick(data){
+                console.log('parent',data)
+            }
+        }
+    })
+</script>
+</body>
+</html>

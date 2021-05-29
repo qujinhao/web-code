@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    /*
+    第一种方法 定位+margin值
+    */
+    /*p{*/
+    /*    width: 200px;*/
+    /*    height: 200px;*/
+    /*    background: green;*/
+    /*    position: fixed;*/
+    /*    top: 50%;*/
+    /*    left: 50%;*/
+    /*    margin-top:-100px;*/
+    /*    margin-left: -100px;*/
+    /*}*/
+
+
+/*
+    第二种方法  定位+transform值
+    缺点：低版本浏览器不兼容
+*/
+
+    /*p{*/
+    /*    width: 200px;*/
+    /*    height: 200px;*/
+    /*    background: green;*/
+    /*    position: fixed;*/
+    /*    top: 50%;*/
+    /*    left: 50%;*/
+    /*    transform: translate(-100px,-100px);*/
+    /*}*/
+
+
+/*
+      第三种方法
+*/
+    /*p{*/
+    /*    width: 200px;*/
+    /*    height: 200px;*/
+    /*    background: green;*/
+    /*    position: fixed;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    right: 0;*/
+    /*    bottom: 0;*/
+    /*    margin: auto;*/
+    /*}*/
+
+
+/*
+    第四种方法
+    弹性盒子
+    缺点：body高度不确定，有些可能125%，故不是贴别准确
+
+*/
+    html,body{
+        height: 100%;
+        width: 100%;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    p{
+        width: 200px;
+        height: 200px;
+        background: green;
+
+    }
+</style>
+<body>
+<!--    <div class="box">-->
+        <p></p>
+<!--    </div>-->
+</body>
+</html>

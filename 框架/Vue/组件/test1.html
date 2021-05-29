@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app2">
+    <div>这是父组件的parentArray：{{parentArray}}</div>
+    <my-component :child-array="parentArray"></my-component>
+</div>
+<script>
+    Vue.component('my-component', {
+        template: `
+       <div>这是接收了父组件传递值的子组件的childArray: {{childArray}} <br>
+           <button type="button" @click="changeArray">
+           点击我改变父元素的parentArray</button>
+         </div>`,
+        props: ['childArray'],
+        data () {
+            return {
+                counter: 1
+            }
+        },
+        methods: {
+            changeArray () {
+                this.childArray.push(this.counter++)
+            }
+        }
+    })
+    new Vue({
+        el: '#app2',
+        data: {
+            parentArray: []
+        }
+    })
+</script>
+
+</body>
+</html>

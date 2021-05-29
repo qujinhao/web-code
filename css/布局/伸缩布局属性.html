@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 900px;
+            height: 600px;
+            border:1px solid red;
+            box-sizing: border-box;
+            /*
+            设置父容器为盒子:会使每一个子元素自动成为伸缩项
+            */
+            display: flex;
+            /*    设置子元素的在主轴方向上排列方式
+            flex-start:让子元素从父容器的起始位置开始排列
+            flex-end:让子元素从父容器的结束位置开始排列
+            center:让父元素从父容器的中间位置开始排列
+            space-between:左右对齐父容器的开始和结束，中间平均分页，产生相同的间距
+            space-around:将多余的空间平均的分布在每一个子元素的两边 margin:0 auto  造成盒子的间距是左右盒子间距的两倍
+            */
+            justify-content: space-around;
+
+
+        /*
+        flex-flow:是flex-wrap和flex-direction的综合
+        flex-wrap:控制子元素是否换行显示，默认不换行
+        nowrap:不换行
+        wrap:换行
+        wrap-reverse：翻转，原来是从上到下，翻转之后从下到上
+        */
+            /*flex-wrap: wrap;*/
+
+
+        /*
+        flex-direction：设置子元素的排列方向：就是用来主轴方向，默认主轴方向是row
+        row:水平排列，从左到右
+        row-reverse:水平排列，从右到左
+        column:垂直排列方向，从上到下
+        column-reverse:垂直排列方向，从下到上
+        */
+            /*flex-direction: column-reverse;*/
+
+            flex-flow: wrap row;
+        }
+        .first{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+
+
+        }
+        .second{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+
+        }
+        .third{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+
+        }
+        .fourth{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .fifth{
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="first">1</div>
+    <div class="second">2</div>
+    <div class="third">3</div>
+    <div class="fourth">4</div>
+    <div class="fifth">5</div>
+</div>
+</body>
+</html>

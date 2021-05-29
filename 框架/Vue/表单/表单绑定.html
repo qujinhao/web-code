@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <input type="text" v-model="mytext">
+    {{mytext}}
+    <p><input type="checkbox" v-model="isChecked">记住用户名</p>
+    {{isChecked}}
+
+    <p><input type="checkbox" v-model="checkedgroup" value="react">react</p>
+    <p><input type="checkbox" v-model="checkedgroup" value="vue">vue</p>
+    <p><input type="checkbox" v-model="checkedgroup" value="jquery">jquery</p>
+    {{checkedgroup}}
+
+
+    <p>
+        react: <input type="radio" value="react" v-model="picked">
+    </p>
+    <p>
+        vue: <input type="radio" value="vue" v-model="picked">
+    </p>
+    {{picked}}
+</div>
+<script>
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            name:'qjh',
+            mytext:'222',
+            isChecked:false,
+            checkedgroup:[],
+            picked:'vue'
+        }
+    })
+</script>
+</body>
+</html>

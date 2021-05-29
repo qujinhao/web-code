@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background: #545b62;
+            position: relative;
+
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            transition: 2s;
+        }
+        p{
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            border: 20px solid #fff;
+            position: absolute;
+            top:0;
+            left: 0;
+            opacity: 0.5;
+            transition: 1s;
+        }
+        h1{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(0,0,0,0);
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            left: -400px;
+            transition: 1s;
+            opacity: 0;
+        }
+        div:hover h1{
+            left: 0;
+            background: rgba(0,0,0,0.5);
+            opacity: 1;
+            transform: rotateY(360deg);
+        }
+        div:hover img{
+            transform: rotateY(360deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/3.jpeg" alt="">
+        <p></p>
+        <h1>Q</h1>
+    </div>
+</body>
+</html>

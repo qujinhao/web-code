@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3常见网页特效</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 300px;
+        height: 300px;
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+    }
+    .box .bg{
+        width: 300px;
+        height: 300px;
+        background: black;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: 0.5s linear;
+    }
+    .box:hover .bg{
+        opacity: 0.7;
+    }
+    .box h3{
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top:-40px;
+        font-size: 28px;
+        color: #2ebcff;
+        transition: 0.5s linear;
+    }
+    .box:hover h3{
+        top: 35px;
+    }
+    .box img:nth-of-type(3){
+        position: absolute;
+        top: 100px;
+        left: -90px;
+        transition: 0.5s linear
+    }
+    .box:hover img:nth-of-type(3){
+        left:120px ;
+    }
+    .box img:nth-of-type(2){
+        position: absolute;
+        top: 121px;
+        right: -50px;
+        transition: 0.5s linear;
+        z-index: 8;
+    }
+    .box:hover img:nth-of-type(2){
+        right:120px;
+    }
+    .box img:nth-of-type(1){
+        transition: 0.5s linear;
+    }
+    .box:hover img:nth-of-type(1){
+        transform: scale(1.2);
+    }
+</style>
+<body>
+    <div class="box">
+        <img src="img/1.jpeg" alt="">
+        <p class="bg"></p>
+        <h3>书籍分享</h3>
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+    </div>
+</body>
+</html>

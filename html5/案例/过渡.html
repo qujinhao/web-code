@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid red;
+            background:skyblue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        /*    添加过渡效果
+        transition-property:添加过渡效果的样式属性名称
+        过渡效果默认执行完毕后返回
+        */
+            /*transition-property: left;*/
+        /*
+        过渡效果的耗时
+        */
+            /*transition-duration: 1s;*/
+        /*
+        设置效果速度--控制运动的速率
+        linear:匀速
+        */
+
+            /*transition-timing-function: linear;*/
+
+        /*
+        过渡效果延迟时间
+        */
+            /*transition-delay: 2s;*/
+
+
+
+        /*    缩写
+        transition: 属性名称 过渡时间  时间函数  延迟
+        */
+            /*transition: left 2s linear 0s;*/
+
+        /*    为多个样式同时添加过渡效果*/
+        /*    transition: left 2s linear 0s , background-color 2.5s linear 0s;*/
+
+        /*    为所有样式添加
+        steps(4)：可以让过渡效果分为指定的几次来完成
+        */
+            transition: all 2s steps(4);
+        }
+        div:active{
+            left: 1000px;
+            background-color: blue;
+        }
+        /*div:hover{*/
+        /*    left: 1000px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<script src="../vuex.js"></script>
+<body>
+<div id="app">
+    {{count}}
+    <my-addbtn ></my-addbtn>
+    <my-removebtn ></my-removebtn>
+</div>
+<script>
+    var store = new Vuex.Store({
+        state:{
+            count: 0
+        },
+        mutations:{
+            add: function (state){
+                state.count++
+            },
+            remove:function (state){
+                state.count--
+            }
+        }
+    });
+    var vm = new Vue({
+        el: '#app',
+        computed:{
+            count: function (){
+                return store.state.count
+            }
+        },
+        components:{
+            'my-addbtn':{
+                template: '<button @click="setCount">+</button>',
+                methods:{
+                    setCount:function (){
+                        store.commit('add');
+                    }
+                }
+            },
+            'my-removebtn':{
+                template: '<button  @click="setCount">-</button>',
+                methods:{
+                    setCount:function (){
+                        store.commit('remove')
+                    }
+                }
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

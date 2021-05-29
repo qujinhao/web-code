@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    用户名：<input type="text" name="userName" id="userName"><br>
+    电话：<input type="tel" name="userPhone" id="userPhone" pattern="^1\d{10}$"><br>
+    <input type="submit">
+</form>
+<script>
+//    oninput:监听当前指定元素内容的改变：只要内容改变就出发事件
+document.getElementById("userName").oninput = function (){
+    console.log("oninput" + this.value);
+}
+
+//onkeyup:键盘弹起时触发：每一个键的弹起都会触发一次
+document.getElementById("userName").onkeyup = function (){
+    console.log('onkeyup' + this.value);
+}
+
+
+//oninvalid:当验证不通过时触发
+document.getElementById("userPhone").oninvalid = function (){
+    //设置默认的提示信息
+    this.setCustomValidity('请输入合法的11位手机号码')
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直手风琴</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .listbox{width: 500px; margin: 0 auto;}
+    .listbox .list a{display: block; height: 35px;  background: linear-gradient(#cecece,#8f8f8f); border-radius: 5px; padding-left: 12px; text-decoration: none;color: #424242; line-height:35px; }
+    .listbox .list p{
+        height:0px ;
+        overflow: auto;
+        padding-left: 10px;
+        margin: 5px 0 ;
+    }
+    .listbox .list{
+        position: relative;
+    }
+    .listbox .list span{
+        width: 0;
+        height: 0;
+        border-left:5px solid rgba(0,0,0,0);
+        border-right:5px solid transparent;
+        border-top:5px solid white;
+        border-bottom:5px solid transparent;
+        position: absolute;
+        top:15px;
+        right: 15px;
+    }
+    .listbox .list:target p{
+        height: 80px;
+        transition: 0.5s;
+    }
+    .listbox .list a:hover, .listbox .list:target a{
+        background: linear-gradient(#6bb2ff,#2288dd);
+        color: white;
+    }
+    .listbox .list:target span{
+        border-top: 5px solid transparent;
+        border-left: 5px solid #fff;
+        right: 10px;
+    }
+
+/*
+    锚点：实现点击效果、单页面进行跳转
+    定位
+    边框写三角形
+    当前活动窗口的控制  :target
+
+*/
+</style>
+<body>
+    <div class="listbox">
+        <div class="list" id="listone">
+            <a href="#listone">Brand</a>
+            <span></span>
+            <p>hinese President Xi Jinping, also general secretary of the Communist Party of China Central Committee and chairman of the Central Military Commission, visits a memorial hall in a memorial park dedicated to the Battle of the Xiangjiang River during the Long March in the 1930s, in Caiwan, a town in Quanzhou County in the city of Guilin, south China's Guangxi Zhuang Autonomous Region, April 25, 2021. (Xinhua/Ju Peng)</p>
+
+        </div>
+        <div class="list" id="listtwo">
+            <a href="#listtwo">Brand</a>
+            <span></span>
+            <p>hinese President Xi Jinping, also general secretary of the Communist Party of China Central Committee and chairman of the Central Military Commission, visits a memorial hall in a memorial park dedicated to the Battle of the Xiangjiang River during the Long March in the 1930s, in Caiwan, a town in Quanzhou County in the city of Guilin, south China's Guangxi Zhuang Autonomous Region, April 25, 2021. (Xinhua/Ju Peng)</p>
+
+        </div>
+        <div class="list" id="listthree">
+            <a href="#listthree">Brand</a>
+            <span></span>
+            <p>hinese President Xi Jinping, also general secretary of the Communist Party of China Central Committee and chairman of the Central Military Commission, visits a memorial hall in a memorial park dedicated to the Battle of the Xiangjiang River during the Long March in the 1930s, in Caiwan, a town in Quanzhou County in the city of Guilin, south China's Guangxi Zhuang Autonomous Region, April 25, 2021. (Xinhua/Ju Peng)</p>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .bounce-enter-active{
+        animation: bounce-in .5s;
+
+    }
+    .bounce-leave-active{
+        animation: bounce-in .5s reverse;
+    }
+
+    @keyframes bounce-in {
+        0%{
+            transform: translate(100px);
+            opacity: 0;
+        }
+
+        100%{
+            transform: translate(0px);
+            opacity: 1;
+        }
+    }
+</style>
+<script src="../vue.js"></script>
+<body>
+    <div id="box">
+        <input type="text" v-model="mytext"/>
+        <button @click="handleClick">add</button>
+        <transition-group tag="ul" name="bounce">
+            <li v-for="(data,index ) in datalist" :key="data">
+                {{data}}
+                <button @click="handleDelClick(index)">del</button>
+            </li>
+        </transition-group>
+    </div>
+    <script>
+        new Vue({
+            el:'#box',
+            data:{
+                    datalist:[],
+                    mytext:''
+                },
+                methods:{
+                    handleClick(){
+                        this.datalist.push(this.mytext)
+                    },
+                    handleDelClick(index){
+                        this.datalist.splice(index,1)
+                    }
+                }
+        })
+    </script>
+</body>
+</html>

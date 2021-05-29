@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <p>我在父组件中{{mytext}}</p>
+    <hello v-model="mytext"></hello>
+</div>
+<script>
+    var obj = {
+        template:`<div>
+        <input type="text" :value="value" @input="handleInput"/>
+        </div>`,
+        // props:['name','age']
+        props:['value'],
+        methods:{
+            handleInput(ev){
+                this.$emit('input',ev.target.value)
+            }
+        }
+    }
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            mytext:'111'
+        },
+        components:{
+            hello:obj
+        },
+        methods:{
+            handleParentclick(data){
+                console.log('parent',data)
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

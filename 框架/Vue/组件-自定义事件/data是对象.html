@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="components-demo3" class="demo">
+    <button-counter2></button-counter2>
+    <button-counter2></button-counter2>
+    <button-counter2></button-counter2>
+</div>
+
+<script>
+    var buttonCounter2Data = {
+        count: 0
+    }
+    Vue.component('button-counter2', {
+        /*
+        data: function () {
+          // data 选项是一个函数，组件不相互影响
+            return {
+                count: 0
+            }
+        },
+        */
+        data: function () {
+            // data 选项是一个对象，会影响到其他实例
+            return buttonCounter2Data
+        },
+        template: '<button v-on:click="count++">点击了 {{ count }} 次。</button>'
+    })
+    new Vue({ el: '#components-demo3' })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            box-sizing: border-box;
+            border: 1px solid #ff0000;
+        /*    添加边框图片*/
+        /*    border-image-source:可以指定边框图片的路劲*/
+            border-image-source: url(../img/img.png);
+        /*    让它成为九宫格
+                border-image-slice:设置四个方向的九宫格
+                fill：做内容内部填充
+        */
+            border-image-slice: 27 fill;
+        /*
+        border-image-width:边框图片的宽度。如果没有设置这个属性，那么宽度的默认就是元素
+        的原始边框宽度
+        细节：1.边框图片的本质是背景，并不会影响元素内容的放置
+        2.内容只会被border和padding影响
+        建议：一般将值设置成原始的边框的宽度
+        */
+            border-image-width: 27px;
+
+        /*
+        border-image-outset:扩展边框
+        */
+            border-image-outset: 0px;
+
+
+        /*
+        border-image-repeat:
+        repeat:直接重复平铺
+        round：将内容缩放进行完整的重复平铺
+        */
+            border-image-repeat: round;.
+
+
+
+        /*    缩写
+        border-image：source slice / width/outset repeat
+        */
+        }
+
+    </style>
+</head>
+<body>
+<div>框图片的宽度。如果没有设置这个属性</div>
+</body>
+</html>

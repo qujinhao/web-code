@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/build/webpack.prod.conf.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/App.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/HelloWorld.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/card.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/comingsoon.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/detail.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/film.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/home.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/components/nowplaying.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/myapp.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/myappchild.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/router/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/单文件组件/test/src/vuex/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/mint/myVue/src/App.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/mint/myVue/src/main.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/myVue/src/Alert.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/myVue/src/Alert.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/myVue/src/App.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/myVue/src/Head.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/myVue/src/List.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/框架/Vue/练习/myVue/src/main.js" charset="UTF-8" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

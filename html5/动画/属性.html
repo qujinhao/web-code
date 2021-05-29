@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+
+        /*    添加动画效果*/
+            animation-name: move;
+        /*    动画总耗时*/
+            animation-duration: 2s;
+        /*    设置动画的播放次数
+        infinite：无限循环
+        */
+            /*animation-iteration-count: infinite;*/
+        /*
+        交替动画
+        来回交替
+        */
+            /*animation-direction: alternate;*/
+        /*
+        设置动画延迟
+        */
+            /*animation-delay: 2s;*/
+        /*
+        设置动画结束时的状态
+        默认情况下动画返回.
+        forwards:保持动画结束时的状态
+        backwards:不会保留动画结束时的状态，在添加了延迟的前提下如果动画有初始的状态，那么会立刻进行初始状态
+        both:会保留动画结束时的状态，有延迟的情况也会立刻进入初始状态
+        */
+            /*animation-fill-mode: both ;*/
+
+        /* 动画时间函数   */
+            animation-timing-function: linear;
+
+        /*    设置动画播放状态*/
+        /*    animation-play-state: paused;*/
+        }
+    /*    创建动画*/
+        @keyframes move {
+            /*0%{*/
+            /*    transform: translate(0,0);*/
+            /*}*/
+            /*100%{*/
+            /*    transform: translate(100px,100px);*/
+            /*}*/
+            from{
+                transform: translate(0,0) rotate(45deg);
+            }
+            to{
+                transform: translate(100px,100px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<input type="button" value="播放" id="play">
+<input type="button" value="暂停" id="pause">
+<script>
+    var div = document.querySelector("div");
+    document.querySelector("#play").onclick = function (){
+        div.style.animationPlayState = 'running';
+    }
+    document.querySelector("#pause").onclick = function (){
+        div.style.animationPlayState = 'paused';
+    }
+</script>
+</body>
+</html>

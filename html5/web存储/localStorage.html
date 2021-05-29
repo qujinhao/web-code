@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--localStorage的使用：
+1.存储的内容更多
+2.不同浏览器不能共享数据，但是在同一个浏览器不同窗口可以共享数据
+3.永久生效，它的数据存储在硬盘上，并不会随着浏览器的关闭或者页面的关闭而数据清除.如果想清除手动清除
+-->
+<!--    setItem（key,value）:存储数据，一键值对的方式存储-->
+<!--    getItem（key）：获取数据，通过指定名称的key获取对应的value值-->
+<!--    removeItem（key）：删除数据，通过指定名称key删除对应的值-->
+<!--    clear()：清除所有存储的内容-->
+<input type="text" id="userName"><br>
+<input type="button" value="设置数据" id="setData">
+<input type="button" value="获取数据" id="getData">
+<input type="button" value="删除数据" id="removeData">
+<script>
+    document.querySelector("#setData").onclick = function (){
+        var name = document.querySelector("#userName").value;
+    //    使用localStorage存储数据
+        window.localStorage.setItem("userName",name)
+    }
+//    获取数据
+    document.querySelector("#getData").onclick = function (){
+        //    如果找不到对应名称的key,那么就会获取null
+        var name = window.localStorage.getItem("userName");
+        alert(name);
+    }
+//    清除数据
+    document.querySelector("#removeData").onclick = function (){
+        //    在删除的时候如果key值错误，那么就不会删除数据，也不会报错
+        window.localStorage.removeItem("userName");
+    }
+</script>
+</body>
+</html>

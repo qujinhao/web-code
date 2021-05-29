@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .bounce-enter-active{
+        animation: bounce-in .5s;
+
+    }
+    .bounce-leave-active{
+        animation: bounce-in .5s reverse;
+    }
+
+    .cover{
+        position: fixed;
+        left: 0px;
+        top:40px;
+        width: 50%;
+        height: 100%;
+        background: black;
+    }
+    @keyframes bounce-in {
+        0%{
+            transform: translate(-100%);
+            opacity: 0;
+        }
+
+        100%{
+            transform: translate(0%);
+            opacity: 1;
+        }
+    }
+
+
+</style>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <button @click="handleClick">
+        click
+    </button>
+    <cover :isshow="isShow"></cover>
+
+</div>
+<script>
+    var cover = {
+        template:`
+          <transition name="bounce">
+          <div class="cover" v-if="isshow"></div>
+          </transition>
+        `,
+        props:['isshow']
+    }
+
+    new Vue({
+        el:'#box',
+        data:{
+            isShow:false
+        },
+        methods:{
+            handleClick:function (){
+                this.isShow = !this.isShow
+            }
+        },
+        components:{
+            cover:cover
+        }
+
+
+    })
+</script>
+</body>
+</html>

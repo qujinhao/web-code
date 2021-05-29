@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+
+autocomplete 属性规定 form 或 input 域应该拥有自动完成功能。当用户在自动完成域中开始输入时，浏览器应该在该域中显示填写的选项。
+-->
+<body>
+
+<!--
+填写并提交表单，然后重新刷新页面查看如何自动填充内容
+注意 form 的 autocomplete 属性为 "on"（开），但是 e-mail 自动为“off”（关）。
+-->
+<form action="../../process.php" method="post" autocomplete="on">
+    First name:<input type="text" name="fname"><br>
+    Last name: <input type="text" name="lname"><br>
+    E-mail: <input type="email" name="email" autocomplete="off"><br>
+    <input type="submit" name="submit">
+</form>
+
+<!--
+novalidate 属性是一个 boolean(布尔) 属性.
+novalidate 属性规定在提交表单时不应该验证 form 或 input 域。
+
+
+
+-->
+<form action="../../process.php" novalidate>
+    E-mail: <input type="email" name="user_email">
+    <input type="submit">
+</form>
+</body>
+</html>

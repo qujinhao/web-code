@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1" id="div1">
+<!--        在h5中,如果想拖拽元素,就必须为元素添加draggable = 'true'  图片和超链接默认可以拖拽-->
+        <p id="pe" draggable="true">试着把我拽过去</p>
+    </div>
+<div class="div2" id="div2">
+
+</div>
+    <script>
+//学习拖拽.主要学习拖拽事件
+
+
+//应用于被拖拽元素事件
+//ondrag    应用于拖拽元素,整个拖拽过程都会使用
+//ondragstart   应用于拖拽元素,当拖拽开始时调用
+//ondragleave   应用拖拽元素,当鼠标离开拖拽元素时调用
+//ondragend     应用于拖拽,当拖拽结束时调用
+    var p = document.querySelector("#pe");
+    var div2 = document.querySelector("#div2")
+var div1 = document.querySelector("#div1")
+    p.ondragstart = function (){
+        console.log("ondragstart")
+    }
+    p.ondragend = function (){
+        console.log("ondragend")
+    }
+
+
+
+
+
+
+//应用于目标元素事件
+//ondragenter 应用目标元素
+//ondragover  应用目标元素,当停留目标元素上时调用
+//ondrop      应用目标元素,当在目标元素上松开鼠标是调用
+//ondragleave   应用目标元素,当鼠标离开目标元素调用
+div2.ondragenter = function (){
+        console.log("ondragenter")
+}
+
+div2.ondragover = function (e){
+        //如果想触发ondrop事件,那么必须在这个位置阻止浏览器的默认行为
+        e.preventDefault();
+}
+
+//浏览器默认阻止ondrop事件:我们必须ondragover中阻止浏览器的默认行为
+div2.ondrop= function (){
+        div2.appendChild(p)
+}
+
+div1.ondragover = function (e){
+    //如果想触发ondrop事件,那么必须在这个位置阻止浏览器的默认行为
+    e.preventDefault();
+}
+div1.ondrop= function (){
+    div1.appendChild(p)
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <button v-on:click="change(counter)">增加 1</button>
+    <p v-bind:style="StyleP" id="FK">这个按钮被点击了 {{counter/10}} 次。</p>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            StyleP:{
+
+                width:"200px",
+                height:"30px",
+                backgroundColor:"green",
+            }
+        },
+
+        methods:{
+            change:function (event){
+                this.counter = this.counter + 10
+                var fk = document.getElementById('FK')
+                fk.style.marginLeft = this.counter + 'px'
+            }
+        }
+    })
+</script>
+</body>
+</html>

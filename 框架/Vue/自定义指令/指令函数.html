@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <p v-hello="obj">111</p>
+
+</div>
+<script>
+    //        全局指令
+    Vue.directive('hello',function(){
+        Vue.directtive('hello',function (el,binding){
+            el.style.background = binding.value;
+        })
+    })
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            obj:{
+                color:'red',
+                background:'yellow'
+            }
+        },
+        directives:{
+
+        }
+    })
+</script>
+</body>
+</html>

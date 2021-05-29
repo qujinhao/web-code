@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <helloa></helloa>
+    <hellob></hellob>
+</div>
+<script>
+    var bus = new Vue();
+    var helloA = {
+        template:`<div>我是组件a
+        <button @click="handleClick">click</button>
+        </div>`,
+        methods:{
+            handleClick(){
+            //    发信息给b组件
+                bus.$emit('qjh','来自组件a的问候')
+            }
+        }
+    }
+    var helloB = {
+        template:`<div>我是组件b</div>`,
+        //生命周期
+        mounted() {
+            console.log('b组件挂载的钩子函数');
+            bus.$on('qjh',function (value){
+
+            })
+        }
+
+    }
+    new Vue({
+        el:'#box',
+        data:{
+
+        },
+        components:{
+            'helloa':helloA,
+            'hellob':helloB
+        }
+    })
+
+</script>
+</body>
+</html>

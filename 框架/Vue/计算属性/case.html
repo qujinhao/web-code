@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <p>单价 ：<input type="text" v-model="price"></p>
+    <p>数量 ：<input type="text" v-model="number"></p>
+    <p>总额：<span>{{sum}}</span></p>
+    <p>计算属性总额：<span>{{computedsum}}</span></p>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            name:'qjh',
+            price:110,
+            number:0,
+            sum:0
+        },
+        watch:{
+            price:function (newvalue){
+                this.sum = newvalue*this.number
+            },
+            number:function (newvalue){
+                this.sum = newvalue*this.price
+            }
+        },
+        computed:{
+            computedsum:function(){
+                return this.number * this.price
+            }
+        }
+    })
+</script>
+</body>
+</html>

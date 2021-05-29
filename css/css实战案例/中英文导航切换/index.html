@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border-bottom: 8px solid #df481d;
+            height: 20px;
+        }
+        div ul li{
+            float: left;
+            list-style: none;
+        }
+        div ul li a{
+            text-decoration: none;
+            display: block;
+            width: 80px;
+            color: #545b62;
+            background: #dfdfdf;
+            font-size: 12px;
+            height: 20px;
+            border: 1px solid #ffffff;
+            text-align: center;
+            line-height: 20px;
+        }
+        div ul li span{
+            display: none;
+        }
+        div ul li a:hover span{
+            display: block;
+            color: #fff;
+            background:#df4f12 ;
+            font-weight: bold;
+        }
+        div ul li a:hover em{
+            display: none;
+        }
+        div ul li a em{
+            font-style: normal;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><a href=""><em>Home</em><span>首页</span></a></li>
+        <li><a href=""><em>Blog</em><span>博客</span></a></li>
+        <li><a href=""><em>home</em><span>首页</span></a></li>
+        <li><a href=""><em>home</em><span>首页</span></a></li>
+    </ul>
+</div>
+</body>
+</html>

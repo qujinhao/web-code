@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <p class="default" :class="isShow?'aaa':'bbb'">class样式</p>
+
+    <p class="default" :class="{active:isShow,show:isShow2}">class样式</p>
+
+    <p class="default" :class=['active','show']>class样式</p>
+
+    <p class="default" :style="{background:color}">style样式</p>
+
+    <p class="default" :style="obj">style样式</p>
+
+    <p class="default" :style=[obj,obj2]>style样式</p>
+</div>
+<script>
+    var vm = new Vue({
+        el:"#box",
+        data:{
+            name:'qjh',
+            isShow:false,
+            isShow2:true,
+            color:'red',
+            obj:{
+                background: 'red',
+
+            },
+            obj2:{
+                fontSize:'30px'
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

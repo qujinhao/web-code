@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .text{
+            width: 100px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .text:hover:before{
+            content: attr(data-text);
+            width: 100px;
+            height: 40px;
+            background: #0ff;
+            text-align: center;
+            line-height: 40px;
+            position: absolute;
+            left: 100%;
+            top:-70%;
+            margin-left: 8px;
+        }
+        .text:hover:after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-right: 8px solid #0ff;
+            border-top:8px solid transparent;
+            border-bottom: 8px solid transparent;
+            position: absolute;
+            left: 100%;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <p class="text" data-text="Hello world">Hover Me!!!!</p>
+
+</body>
+</html>

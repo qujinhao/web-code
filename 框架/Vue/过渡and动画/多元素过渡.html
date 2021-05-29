@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<style>
+    .bounce-enter-active{
+        animation: bounce-in .5s;
+
+    }
+    .bounce-leave-active{
+        animation: bounce-in .5s reverse;
+    }
+
+    @keyframes bounce-in {
+        0%{
+            transform: translate(100px);
+            opacity: 0;
+        }
+
+        100%{
+            transform: translate(0px);
+            opacity: 1;
+        }
+    }
+
+
+</style>
+<div id="box">
+    <button @click="handleChange">click</button>
+    <transition name="bounce" mode="in-out">
+        <p v-if="isShow" key="1">1111</p>
+        <p v-else key="2">22222</p>
+    </transition>
+
+
+</div>
+<script>
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            isShow:true
+        },
+        methods:{
+            handleChange(){
+                this.isShow = !this.isShow
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

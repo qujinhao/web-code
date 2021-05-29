@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+    <div id="box">
+        <button @click="count=count-1">-</button>
+        <p>{{count}}</p>
+        <button @click="count=count+1">+</button>
+
+
+
+        <p>{{name}}</p>
+        <button @click="handleClick">点击</button>
+
+
+
+
+        <button @click="handleClick2('111','222',$event)">点击</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                count:1,
+                name:'qjh'
+            },
+            methods:{
+                handleClick(ev){
+                    console.log(ev.target)
+                    this.name = 'aaa'
+                },
+                handleClick2(data1,data2,ev){
+                    console.log(data1)
+                    console.log(data2)
+                    console.log(ev.target)
+
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

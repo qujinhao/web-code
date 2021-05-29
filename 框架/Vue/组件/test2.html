@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <div>这是图片：{{pic1}}</div>
+    <my-component :pic2='pic1'></my-component>
+</div>
+<script>
+    Vue.component('my-component',{
+        template:`<div>{{pic2}}<br>
+        <button type="button" @click="changeP">切换图片</button>
+        </div>`,
+        props:['pic2'],
+        data(){
+            return{
+                counter: 1
+            }
+
+        },
+        methods:{
+            changeP(){
+                this.pic2.push(this.counter++)
+            }
+        }
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            pic1:[]
+        }
+    })
+</script>
+</body>
+</html>

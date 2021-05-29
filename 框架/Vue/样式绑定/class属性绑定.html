@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .active {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <div v-bind:class="{ 'active': isActive }"></div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            isActive: false
+        }
+    })
+</script>
+</body>
+</html>

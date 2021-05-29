@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="div1" id="div1">
+    <!--        在h5中,如果想拖拽元素,就必须为元素添加draggable = 'true'  图片和超链接默认可以拖拽-->
+    <p id="pe" draggable="true">试着把我拽过去</p>
+</div>
+<div class="div2" id="div2">
+
+</div>
+<script>
+   document.ondragstart = function (e){
+   //    通过事件捕获来获取当前被拖拽的子元素
+       e.target.style.opacity = 0.5;
+       obj = e.target
+
+   //    通过dataTransfer来实现数据的存储与获取
+   //    setData(format,data)
+   //    format:数据的类型:text/html  text/url-list
+   //    data:数据:一般来说是字符串
+
+       e.dataTransfer.setData('text/html',e.target.id);
+   }
+   // document.ondragend = function (e){
+   //     //    通过事件捕获来获取当前被拖拽的子元素
+   //     e.target.style.opacity = 0.5;
+   // }
+
+
+    var object = null;
+   document.ondragover = function (e){
+       e.preventDefault()
+   }
+   document.ondrop = function (e){
+       // e.target.appendChild(obj)
+
+
+   //    通过e.dataTransfer.setData存储的数据，只能在drop事件中获取
+       var id = e.dataTransfer.getData("text/html");
+       // console.log(id)
+       e.target.appendChild(document.getElementById(id))
+   }
+</script>
+</body>
+</html>

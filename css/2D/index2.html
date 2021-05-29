@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-left: 200px;
+            margin-top: 10px;
+        /*
+        添加过渡效果
+        css样式名称 耗时
+        */
+            transition: transform 2s;
+        }
+        /*移动*/
+        div:first-of-type:active{
+        /*
+          1.使用transform实现元素的移动  移动参照元素左上角  执行完毕后会恢复原位
+          2.如果只有一个参数就代表x方向
+          3. 如果有两个参数就代表x/y方向
+
+           */
+            /*transform: translate(100px);*/
+            /*transform: translate(100px,200px);*/
+
+
+            /*添加水平或垂直方向的移动*/
+            transform: translateY(100px);
+        }
+
+    /*    缩放scale*/
+       div:nth-of-type(2):active{
+        /*   如果只有一个参数，就代表x和y方向都进行等比例缩放  参照元素中心
+            如果有两个参数就代表x/y方向
+        */
+           /*transform: scale(2,1.5);*/
+           transform:scaleX(2);
+
+
+        }
+
+
+        /*   rotate：旋转*/
+        div:nth-of-type(3):hover{
+            transform: translateX(200px) rotate(-90deg);
+        /*    设置旋转轴心
+        1.x y
+        2.关键字：left top right bottom center
+
+        */
+        transform-origin: left top ;
+        }
+
+    /*  skew:斜切  倾斜显示*/
+        div:nth-of-type(4):active{
+            /*角度为正，则往当前轴的负方向斜*/
+            /*transform: skew(30deg,-30deg);*/
+            /*设置某个方向的斜切值*/
+            transform:   skewY(30deg
+            )
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

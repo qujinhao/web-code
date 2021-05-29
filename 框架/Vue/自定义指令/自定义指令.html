@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+    <div id="box">
+        <p v-hello="color">111</p>
+        <p v-hello2>111</p>
+    </div>
+    <script>
+//        全局指令
+        Vue.directive('hello',{
+            inserted:function(el,binding){
+                console.log(el);
+                el.style.background = binding.value
+        },
+            update:function (el,binding){
+                // console.log('update')
+                el.style.background = binding.value
+            }
+        })
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                color:'gray'
+            },
+            directives:{
+                'hello2':{
+                    inserted:function (el){
+                        console.log(el)
+                        el.style.background = 'blue'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

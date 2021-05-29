@@ -9,8 +9,8 @@ app.use('/public', express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(multer({ dest: '/tmp/'}).array('image'));
 
-app.get('/index.html', function (req, res) {
-    res.sendFile( __dirname + "/" + "index.html" );
+app.get('/获取元素类.html', function (req, res) {
+    res.sendFile( __dirname + "/" + "获取元素类.html" );
 })
 
 app.post('/file_upload', function (req, res) {

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+定义:
+规范：
+1.data开头
+2.data后必须至少有一个字符
+3.data-后至少有一个字符，多个单词使用-连接
+建议：
+1.名称中应该都使用小写
+2.名称中不要有任何的特俗符号
+3.名称不要副作用纯数字
+
+-->
+<p data-school-name="itcast">传播智客</p>
+n
+<!--取值-->
+<script>
+    window.onload = function (){
+        var p = document.querySelector('p');
+    //    获取自定义属性值
+    //    讲data-后面的单词使用camel命名发连接,必须使用camel命名法获取值否则有可能无法获取
+       var value =  p.dataset["schoolName"];
+       console.log(value)
+    }
+</script>
+</body>
+</html>

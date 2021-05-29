@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--    embed:直接插入视频文件：它的本质是调用本机上已经安装的软件，有兼容性-->
+<!--    audio音频
+controls: 音频播放器的控制面板
+autoplay:自动播放
+loop: 循环
+
+-->
+
+<!--<audio src="./mp3/月牙湾.mp3" controls autoplay></audio>-->
+
+
+
+
+
+<!--    video视频-->
+<!--    audio音频
+controls: 音频播放器的控制面板
+autoplay:自动播放
+loop: 循环
+width:宽度
+height:高度
+poster:当视频还没有完全下载，或者用户还没有点击播放前的默认显示的封面
+
+注意：
+当设置宽高的时候，一般只设置宽度或高度，让其自动的等比缩放，除非设置的值是等比的
+
+-->
+<video src="video标签/video/1.mp4" poster="img/beautiful.jpg" controls width="300"></video>
+
+
+<!--
+source :因为使用的浏览器不同，所以在设置时需要考虑浏览器是否支持，可以准备多个格式的视频文件
+-->
+<video controls>
+    <source src="" type="video/flv">
+    <source src="" type="video/mp4">
+    你的浏览器不支持当前视频播放
+</video>
+</body>
+</html>

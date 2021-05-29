@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <p v-if="isCreated">111</p>
+    <p v-else>222</p>
+
+
+    <template v-if="isCreated">
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+    </template>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            isCreated:true
+        }
+    })
+</script>
+</body>
+</html>

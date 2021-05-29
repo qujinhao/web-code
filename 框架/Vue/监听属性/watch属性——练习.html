@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <p>图片展示</p>
+    <p>图片：{{counter-1}} </p>
+    <div><img src=""  id="pic"></div>
+    <button @click="counter++">点我</button>
+</div>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            counter:1,
+        },
+
+    })
+    vm.$watch('counter',function (nval, oval){
+        var pic = document.getElementById('pic');
+        pic.src = 'img/' + oval + '.jpg';
+    });
+</script>
+</body>
+</html>

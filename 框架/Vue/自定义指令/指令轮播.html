@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+    <p v-hello="obj">111</p>
+
+</div>
+<script>
+    //        全局指令
+    Vue.directive('hello',function(){
+        Vue.directtive('hello',function (el,binding){
+
+        })
+    })
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            obj:{
+                color:'red',
+                background:'yellow'
+            }
+        },
+        mounted() {
+            //请求数据
+            setTimeout(() => {
+                this.datalist = ['111','222','333']
+            },2000)
+        },
+        directives:{
+
+        }
+    })
+</script>
+</body>
+</html>

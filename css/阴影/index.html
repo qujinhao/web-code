@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .demo{
+            width: 500px;
+            height: 120px;
+            margin: 50px auto;
+            background-color: #666;
+            text-align: center;
+            font: bold 60px/120px "微软雅黑";
+            color: #fff;
+        }
+    /*    添加阴影
+    text-shadow:offsetX offsetY  blur color
+    */
+
+        .demo1{
+            text-shadow: -2px -2px 5px red;
+        }
+        .demo2{
+            text-shadow: 0px 0px 30px #fff;
+        }
+
+    /*    多层阴影*/
+        .demo3{
+            text-shadow: 0px 0px 30px #fff,0px 0px 50px red;
+        }
+        .demo4{
+            color: #fff;
+            text-shadow: -1px -1px 0px #eee,-1px -2px 0px #ddd,-1px -1px -3px #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="demo demo1">中华人民共和国</div>
+<div class="demo demo2">中华人民共和国</div>
+<div class="demo demo3">中华人民共和国</div>
+<div class="demo demo4">中华人民共和国</div>
+<div class="demo demo5">中华人民共和国</div>
+</body>
+</html>

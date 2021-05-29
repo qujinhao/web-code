@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li class="red">前端</li>
+    <li class="green">java</li>
+    <li class="blue" id="c">c</li>
+</ul>
+<script>
+//    获取第一个li标签
+window.onload = function (){
+    // var cli =document.getElementsByTagName('li')[0];
+    // console.log(cli)
+
+    //query:查询
+    // selector:选择器
+    //querySelector(传入选择器名称)   获取单个元素,如果获取的元素不止一个，那么只返回满足条件的第一个元素
+    //参数要求：如果时类选择器，必须添加.   如果时ID选择器，不许添加#
+    var javaLi = document.querySelector(".green");
+    // var c = document.querySelector("#c");
+    console.log(javaLi)
+
+
+//    获取满足条件的所有元素---数组
+    var allLi = document.querySelectorAll("li")
+    console.log(allLi)
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="box">
+   <p>{{getData}}</p>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            name:'qjh'
+        },
+        computed:{
+            getData:{
+                get:function (){
+                    return 'qjh';
+                },
+                set:function (value){
+                    console.log(value)
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

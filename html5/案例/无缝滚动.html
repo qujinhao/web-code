@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 500px;
+            height: 100px;
+            margin: 50px auto;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        div ul{
+            width: 200%;
+            list-style: none;
+            animation-name:move ;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        div ul li{
+            width: 100px;
+            float: left;
+        }
+        div ul li img{
+            width: 100px;
+            height: 100px;
+        }
+        div:hover ul{
+            cursor: pointer;
+            animation-play-state: paused;
+        }
+    /*    创建动画*/
+        @keyframes move {
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-500px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="../img/animation1.jpeg" alt=""></li>
+        <li><img src="../img/animation2.jpeg" alt=""></li>
+        <li><img src="../img/animation3.jpeg" alt=""></li>
+        <li><img src="../img/animation4.jpeg" alt=""></li>
+        <li><img src="../img/animation5.jpeg" alt=""></li>
+        <li><img src="../img/animation1.jpeg" alt=""></li>
+        <li><img src="../img/animation2.jpeg" alt=""></li>
+        <li><img src="../img/animation3.jpeg" alt=""></li>
+        <li><img src="../img/animation4.jpeg" alt=""></li>
+        <li><img src="../img/animation5.jpeg" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

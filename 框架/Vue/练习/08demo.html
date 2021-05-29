@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<!--    <div id="app">
+        <my-header>
+            <h2>我是标题</h2>
+        </my-header>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            components:{
+                'my-header':{
+                    template:'<div>我是头部:<slot></slot></div>'
+                }
+            }
+        })
+
+    </script>
+ -->
+
+
+<div id="app">
+    <my-header>
+       <button slot="right">→</button>
+        <button slot="left">⬅</button>
+    </my-header>
+
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        components:{
+            'my-header':{
+                template:'<div><slot name="left"></slot>我是头部:<slot name="right"><button>+</button></slot></div>'
+            },
+            'my-title':{
+                template:'<h2>我是标题</h2>'
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

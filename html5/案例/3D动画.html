@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background:rgb(17,17,17);
+        }
+        .box ul li{
+            list-style: none;
+            position: absolute;
+            border: 1px solid white;
+        }
+        .box{
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+            position: relative;
+            perspective: 2500px;
+            perspective-origin: 50% 50%;
+        }
+
+        .box ul{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            top: 0;
+            right: 0;
+            transform-style: preserve-3d;
+            transition: transform 5s;
+        }
+        .box ul li:nth-of-type(1){
+            width: 400px;
+            height: 300px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            transform:translateZ(10px);
+        }
+        .box ul li:nth-of-type(2){
+            width: 400px;
+            height: 300px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            transform:translateZ(-10px);
+        }
+        .box ul li:nth-of-type(3){
+            width: 300px;
+            height: 20px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            transform: translate3d(-150px,140px,0px) rotateX(90deg) rotateY(90deg);
+        }
+        .box ul li:nth-of-type(4){
+            width: 300px;
+            height: 20px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            transform: translate3d(250px,140px,0px) rotateX(90deg) rotateY(90deg);
+        }
+        .box ul li:nth-of-type(5){
+            width: 400px;
+            height: 20px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            transform: rotateX(90deg) translate3d(0,0px,10px);
+        }
+        .box ul:hover{
+            transform: rotateX(45deg) rotateZ(-45deg) ;
+        }
+        .box ul li:nth-of-type(6){
+            width: 400px;
+            height: 20px;
+            background: rgba(0,255,255,.5);
+            position: absolute;
+            transform: rotateX(90deg) translate3d(0,0px,-290px);
+        }
+        .box .ball{
+            width: 30px;
+            height: 30px;
+            border-radius: 999px;
+            position: absolute;
+            /*top: 0px;*/
+            left: 408px;
+            bottom:172px;
+            /*
+            径向渐变
+            */
+            background: radial-gradient(circle at 10px 10px, #5cabff, #000000);
+            text-shadow: 100px 100px 100px black;
+            animation-name: move;
+            animation-duration: 13s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes move {
+            0% {transform: translateZ(0px) scale(0.5); }
+            8%{transform: translateZ(1000px) scale(2); }
+            16%{transform: translateX(-40px) translateZ(0px) scale(0.5); }
+            24%{transform: translateX(-80px) translateZ(800px) scale(1.8); }
+            32%{transform: translateX(-120px) translateZ(0px) scale(0.5);}
+            40%{transform: translateX(-160px) translateZ(600px) scale(1.6);}
+            48%{transform: translateX(-200px) translateZ(0px) scale(0.5);  }
+            56%{transform: translateX(-240px) translateZ(400px) scale(1.4);}
+            64%{transform: translateX(-280px) translateZ(0px) scale(0.5);}
+            72%{transform: translateX(-320px)  translateZ(200px)  scale(1.2);}
+            80%{transform: translateX(-340px)  translateZ(0px)  scale(0.5);}
+            88%{transform: translateX(-380px)  translateZ(100px)  scale(1.1);}
+            100%{transform: translateX(-410px)  translateZ(0px)  scale(0.5) ;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

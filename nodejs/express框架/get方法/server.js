@@ -3,8 +3,8 @@ var app = express();
 
 app.use('/public', express.static('public'));
 
-app.get('/index.html', function (req, res) {
-    res.sendFile( __dirname + "/" + "index.html" );
+app.get('/获取元素类.html', function (req, res) {
+    res.sendFile( __dirname + "/" + "获取元素类.html" );
 })
 
 app.get('/process_get', function (req, res) {

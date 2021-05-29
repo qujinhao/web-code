@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <runoob></runoob>
+</div>
+<div>
+    <runoob></runoob>
+</div>
+<script>
+    var Child = {
+        template: '<h1>自定义组件!</h1>'
+    }
+
+    // 创建根实例
+    new Vue({
+        el: '#app',
+        components: {
+            // <runoob> 将只在父模板可用,只能在该实例中用
+            'runoob': Child
+        }
+    })
+</script>
+</body>
+</html>

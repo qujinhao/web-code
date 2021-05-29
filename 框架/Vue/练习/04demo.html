@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue 4demo</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+
+<div id="app">
+    <my-header ></my-header>
+</div>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            list: ['第一项','第二项','第三项'],
+            message: 'hello App'
+        },
+        components:{
+            'my-header':{
+                template: `<div>
+                <h2>{{nowMessage}}</h2>
+                    <ul>
+                      <li v-for="item in list">{{item}}</li>
+                    </ul>
+                <my-nav :list="list" @changeEvents="getChildContent"></my-nav>
+                </div>`,
+                data:function (){
+                    return{
+                        message: 'hello myHeader!!!',
+
+                    };
+                },
+                // props: ['list'], //父组件向子组件进行通信操作
+                props:{
+                  'list':{
+                      type: Array,
+                      default: function (){
+                          return ['第一项11','第二项22','第三项33'];
+                      }
+                  },
+                    'message':{
+                      type:String,
+                      default: 'hello myHeader'
+                    }
+                },
+                data:function(){
+                    return{
+                        nowMessage: this.message
+                    }
+                },
+                methods:{
+                    getChildContent: function (str){
+                        // console.log(str)
+                        this.message = str
+                    }
+
+                },
+                components:{
+                    'my-nav':{
+                        template: `
+                        <ul>
+                            <li @click="getContent" v-for="item in list">{{item}}</li>
+                    </ul>
+                        `,
+                        props:['list'],
+                        methods:{
+                            getContent: function (ev){
+                                // console.log(this)
+                                // console.log(ev.target.innerHTML)
+                                this.$emit('changeEvents',ev.target.innerHTML)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

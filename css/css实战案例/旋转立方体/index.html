@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css3旋转立方体</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding:0;
+    }
+    .box{
+        width: 400px;
+        height: 400px;
+        border: 4px solid red;
+        margin: 30px auto;
+    }
+    .box ul{
+        width: 300px;
+        height: 300px;
+        border: 1px solid blue;
+        margin: 50px;
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 10000px;
+        /*
+        调用move,时长2s,循环播放、匀速
+        */
+        animation: move 2s infinite linear;
+        transform-origin: center center 150px;
+    /*
+    中心点
+    */
+
+    }
+    .box ul li{
+        width: 300px;
+        height: 300px;
+        list-style: none;
+        font-size: 30px;
+        color: #fff;
+        text-align: center;
+        line-height: 300px;
+        position: absolute;
+    }
+    .box ul li:nth-of-type(1){
+        background: red;
+        opacity: 0.4;
+    }
+    .box ul li:nth-of-type(2){
+        background: red;
+        opacity: 0.4;
+        transform:translateX(300px) rotateY(-90deg);
+        transform-origin:left;
+    }
+    .box ul li:nth-of-type(3){
+        background: blue;
+        opacity: 0.4;
+        transform:translateX(-300px) rotateY(90deg);
+        transform-origin:right;
+    }
+    .box ul li:nth-of-type(4){
+        background: green;
+        opacity: 0.4;
+        transform:translateY(-300px) rotateX(-90deg);
+        transform-origin:bottom;
+    }
+    .box ul li:nth-of-type(5){
+        background: yellow;
+        opacity: 0.4;
+        transform:translateY(300px) rotateX(90deg);
+        transform-origin:top;
+    }
+    .box ul li:nth-of-type(6){
+        background: peru;
+        opacity: 0.4;
+        transform: translateZ(300px);
+    }
+    @keyframes move {
+        from{transform:rotateY(0deg);}
+        to{transform: rotateY(360deg)}
+    }
+/*
+        1.定位
+        2.移动物体 transform：translate 平移
+        rotate旋转 x水平轴 Y表示垂直的轴、z指的是眼睛垂直屏幕的轴
+        3.3d场景设置
+        transform-style:preserve-3d  是需要添加在所有变形元素的父元素
+        perspective:1200px 景深 看物体的远近   数值不受限，
+        4.动画 animation
+*/
+</style>
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+<div id="app">
+    <div v-bind:style="styleObject">菜鸟教程</div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            styleObject: {
+                color: 'green',
+                fontSize: '30px',
+                width:'150px',
+                height:'50px',
+                opacity:'0.1',
+                overflow:'auto'
+
+            }
+        }
+    })
+</script>
+</body>
+</html>

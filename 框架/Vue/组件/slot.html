@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../vue.js"></script>
+<body>
+    <div id="box">
+        <hello>
+            <button @click="handleClick" slot="leftbutton">leftbutton</button>
+            <span slot="content">标题内容</span>
+            <button @click="handleClick" slot="rightbutton">rightbutton</button>
+        </hello>
+    </div>
+    <script>
+        var obj = {
+            template:`<div>
+            <slot name="leftbutton"></slot>
+            <slot name="content"></slot>
+            <slot name="rightbutton"></slot>
+            </div>`,
+
+        }
+        new Vue({
+            el:"#box",
+            data:{
+
+            },
+            components:{
+                hello:obj
+            },
+            methods:{
+                handleClick(){
+                    console.log('button click')
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
